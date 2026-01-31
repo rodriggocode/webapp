@@ -3,9 +3,71 @@
     <header>
         <meta charset="UTF-8" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+
         <title>Login</title>
     </header>
-    <body>
-        <h1 class="text-center font-black text-3xl">Pagina de Login</h1>
+
+    <body class="">
+        <header class="bg-zinc-900 p-5 text-white text-2xl font-[700]">
+            DevBook
+        </header>
+        <div
+            class="font-['Gueda'] text-1xl font-regular bg-[#FFFFFF] text-white h-screen flex items-center justify-center gap-x-25"
+        >
+            <div>
+                <img
+                    src="../assets/img/Devbook.png"
+                    alt="desenho de um homem"
+                    class="w-[280.02px] h-[292px]"
+                />
+            </div>
+            <div class="p-20 rounded-sm h-auto r-auto">
+                <div>
+                    <form class="flex flex-col gap-3 items-center w-full">
+                        <span class="text-center text-[#404040]"
+                            >Seja bem vindo(a) ao Devbook</span
+                        >
+                        <div>
+                            <label class="text-[#404040]">Email:</label><br />
+                            <input
+                                type="tex"
+                                name="email"
+                                placeholder="Digite seu email"
+                                required="required"
+                                class="outline-none border border-[#808080] text-[#808080] rounded-sm h-[50px] pt-0 pb-0 pr-[20px] pl-[38px]"
+                            />
+                        </div>
+                        <div>
+                            <label class="text-[#404040]">Senha:</label><br />
+                            <input
+                                type="password"
+                                name="password"
+                                required="required"
+                                class="outline-none border border-[#737373] text-[#808080] rounded-sm h-[50px] pt-0 pb-0 pr-[20px] pl-[38px]"
+                            />
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button
+                                type="submit"
+                                class="border border-[#4A3AFF] p-2 rounded-sm text-[#4A3AFF] text-center cursor-pointer w-[291px]"
+                            >
+                                Entrar
+                            </button>
+                            <a
+                                href="#"
+                                class="border-b-1 border-t border-l border-r border-[#4A3AFF] p-2 rounded-sm text-center text-[#808080] w-[291px]"
+                                >Criar Conta</a
+                            >
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

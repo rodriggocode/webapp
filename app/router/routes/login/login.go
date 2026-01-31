@@ -8,4 +8,5 @@ import (
 func LoginRouter(router *http.ServeMux) {
 	router.HandleFunc("/", handlers.Login)
 	router.HandleFunc("/login", handlers.Login)
+
 }
