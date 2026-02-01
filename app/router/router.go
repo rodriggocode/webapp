@@ -3,11 +3,13 @@ package router
 import (
 	"net/http"
 	routes "webapp/app/router/routes/login"
+	router_users "webapp/app/router/routes/users"
 )
 
 func Gerar() *http.ServeMux {
 	router := http.NewServeMux()
 	routes.LoginRouter(router)
+	router_users.RouterUsers(router)
 
 	/*  aqui serve para os aquivos staticos css e js.
 	ainda nao sei se ele fica na rota aqui a principal ou em cada uma separada e depois eu vou ver
