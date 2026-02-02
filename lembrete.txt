@@ -1,0 +1,16 @@
+AQUI E PARA EU NAO ME PERDER E SABER QUE FOI EU MESMO QUE FIZ, SEM IA E SEM TUTORIAL DO YOUTUBE
+OBRIGADO DEUS, EU NAO SOU TAO BURRO.RS
+
+let createUser = document.querySelector(".btn-create");
+let inputName = document.querySelector("#user_name");
+createUser.addEventListener("click", (event) => {
+  event.preventDefault();
+  console.log("enviando formulario");
+  //let result = inputName.value;
+  console.log(inputName.value);
+  if (inputName.value == "Rodrigo Martins") {
+    console.log(`Bem Vindo ${inputName.value}`);
+  } else {
+    console.log("nome errado");
+  }
+});
