@@ -1,88 +1,125 @@
 <!doctype html>
 <html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cadastro de Usuario</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..800;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/c0e32f71af.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Cadastro de Usuario</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..800;1,100..900&display=swap"
-    rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/c0e32f71af.js" crossorigin="anonymous"></script>
-</head>
-
-<body class="font-['Gudea'] h-screen w-auto">
-  <header class="bg-zinc-800 text-white p-5">
-    <h1 class="font-black text-center text-3xl">Criar Conta</h1>
-  </header>
-  <main class="text-[18px] go h-screen w-auto flex items-center justify-center gap-x-25">
-    <div>
-      <img src="../assets/img/Devbook.png" class="w-[280.02px] h-[292px]" />
-    </div>
-    <div>
-      <form class="flex flex-col items-center gap-5">
-        <labal class="text-[#404040]">Nome</labal>
-        <input type="text" name="user_name" id="user_name" placeholder="Digite seu nome"
-          class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none" />
-        <label class="text-[#404040]">Nick</label>
-        <input type="text" name="nick" id="nick" placeholder="Digite seu nick"
-          class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none" />
-        <label class="text-[#404040]">Email</label>
-        <input type="email" name="email" id="email" placeholder="exemplo@email.com"
-          class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none" />
-        <label class="text-[#404040]">Senha</label>
-        <input type="password" name="password" id="password" placeholder="*******"
-          class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none" />
-        <label class="text-[#404040]">Confirmar senha</label>
-        <input type="password" name="confirm_password" id="confirm_password" placeholder="*******"
-          class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none" />
-      </form>
-      <div class="flex justify-between mt-10">
-        <button type="submit" class="btn-create border border-[#4A3AFF] p-2 rounded-sm cursor-pointer text-[#4A3AFF]">
-          Cadastrar
-        </button>
-        <button class="border border-[#4A3AFF] p-2 rounded-sm text-[#404040] cursor-pointer w-25">
-          <a href="/">Cancelar</a>
-        </button>
-      </div>
-    </div>
-  </main>
-  <footer class="bg-zinc-900 w-auto p-5 text-[#737373] text-center">
-    <p class="font-medium text-2xl">
-      Desenvolvido por: &copyRodrigo Martins
-    </p>
-    <nav>
-      <ul class="flex justify-center row gap-x-5 text-[15px]">
-        <li>
-          <a href="#">
-            <i class="fa-brands fa-instagram"></i>
-            <span>Instagram</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa-brands fa-github"></i>
-            <span>Github</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa-brands fa-square-whatsapp"></i>
-            <span>Whatsapp</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa-brands fa-linkedin"></i>
-            <span>Linkedin</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </footer>
-  <script src="../assets/js/cadastro.js"></script>
-</body>
-
+    <body class="font-['Gudea'] h-screen w-auto">
+        <header class="bg-zinc-800 text-white p-5">
+            <h1 class="font-black text-center text-3xl">Criar Conta</h1>
+        </header>
+        <main
+            class="text-[18px] go h-screen w-auto flex items-center justify-center gap-x-25"
+        >
+            <div>
+                <img
+                    src="../assets/img/Devbook.png"
+                    class="w-[280.02px] h-[292px]"
+                />
+            </div>
+            <div>
+                <form class="forms flex flex-col items-center gap-5">
+                    <labal class="text-[#404040]">Nome</labal>
+                    <input
+                        type="text"
+                        name="user_name"
+                        id="user_name"
+                        placeholder="Digite seu nome"
+                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
+                    />
+                    <label class="text-[#404040]">Nick</label>
+                    <input
+                        type="text"
+                        name="nick"
+                        id="nick"
+                        placeholder="Digite seu nick"
+                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
+                    />
+                    <label class="text-[#404040]">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="exemplo@email.com"
+                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
+                    />
+                    <label class="text-[#404040]">Senha</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="*******"
+                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
+                    />
+                    <label class="text-[#404040]">Confirmar senha</label>
+                    <input
+                        type="password"
+                        name="confirm_password"
+                        id="confirm_password"
+                        placeholder="*******"
+                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
+                    />
+                </form>
+                <div class="flex justify-between mt-10">
+                    <button
+                        type="submit"
+                        class="btn-create border border-[#4A3AFF] p-2 rounded-sm cursor-pointer text-[#4A3AFF]"
+                    >
+                        Cadastrar
+                    </button>
+                    <button
+                        class="border border-[#4A3AFF] p-2 rounded-sm text-[#404040] cursor-pointer w-25"
+                    >
+                        <a href="/">Cancelar</a>
+                    </button>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-zinc-900 w-auto p-5 text-[#737373] text-center">
+            <p class="font-medium text-2xl">
+                Desenvolvido por: &copyRodrigo Martins
+            </p>
+            <nav>
+                <ul class="flex justify-center row gap-x-5 text-[15px]">
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                            <span>Github</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-square-whatsapp"></i>
+                            <span>Whatsapp</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>Linkedin</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <script src="../assets/js/cadastro.js"></script>
+    </body>
 </html>
