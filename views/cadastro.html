@@ -29,7 +29,9 @@
                     class="w-[280.02px] h-[292px]"
                 />
             </div>
-            <div>
+            <div
+                class="p-4 shadow-[0px_1px_2px_#808080] rounded-sm w-[50%] max-h-auto"
+            >
                 <form class="forms flex flex-col items-center gap-5">
                     <labal class="text-[#404040]">Nome</labal>
                     <input
@@ -39,6 +41,9 @@
                         placeholder="Digite seu nome"
                         class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
                     />
+                    <span class="text-red-900 text-sm font-semibold flex hidden"
+                        >O campo nome nao pode ser vazio</span
+                    >
                     <label class="text-[#404040]">Nick</label>
                     <input
                         type="text"
@@ -47,6 +52,10 @@
                         placeholder="Digite seu nick"
                         class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
                     />
+                    <span class="text-red-900 text-sm font-semibold flex hidden"
+                        >O nick nao pode ser um campo vazio, nao pode conter
+                        menos que 6 caracteres</span
+                    >
                     <label class="text-[#404040]">Email</label>
                     <input
                         type="email"
@@ -55,6 +64,10 @@
                         placeholder="exemplo@email.com"
                         class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
                     />
+                    <span class="text-red-900 text-sm font-semibold flex hidden"
+                        >O email nao pode ser um capo vazio, e tem que ser um
+                        tipo valido</span
+                    >
                     <label class="text-[#404040]">Senha</label>
                     <input
                         type="password"
@@ -63,6 +76,11 @@
                         placeholder="*******"
                         class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
                     />
+                    <span
+                        class="password_caracter text-red-900 text-sm font-semibold flex hidden"
+                        >A senha tem que ter mais de 6 caracteres.</span
+                    >
+
                     <label class="text-[#404040]">Confirmar senha</label>
                     <input
                         type="password"
@@ -71,6 +89,10 @@
                         placeholder="*******"
                         class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
                     />
+                    <span
+                        class="erro_password span_password text-red-900 text-sm font-semibold flex hidden"
+                        >As senhas nao conferem.</span
+                    >
                 </form>
                 <div class="flex justify-between mt-10">
                     <button

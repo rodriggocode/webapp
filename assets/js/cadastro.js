@@ -1,16 +1,12 @@
-let createUser = document.querySelector(".btn-create");
+const createUser = document.querySelector(".btn-create");
 
-let Inputpassword = document.querySelector("#password");
-
-let confirm_password = document.querySelector("#confirm_password");
-
-let form = document.querySelector(".forms");
+const form = document.querySelector(".forms");
 
 const CreateUser = async () => {
-  let user_name = form.elements["user_name"].value;
-  let nick = form.elements["nick"].value;
-  let email = form.elements["email"].value;
-  let password = form.elements["password"].value;
+  const user_name = form.elements["user_name"].value;
+  const nick = form.elements["nick"].value;
+  const email = form.elements["email"].value;
+  const password = form.elements["password"].value;
   try {
     const headers = {
       "Content-Type": "application/json",
@@ -36,16 +32,29 @@ const CreateUser = async () => {
   }
 };
 
+const validarPassword = () => {
+  const Inputpassword = document.querySelector("#password");
+
+  const confirm_password = document.querySelector("#confirm_password");
+  const passWordCaracter = document.querySelector(".password_caracter");
+  if (Inputpassword.value.length < 5 && confirm_password.value.length < 5) {
+    passWordCaracter.classList.remove("hidden");
+    return;
+  } else {
+    passWordCaracter.classList.add("hidden");
+  }
+  const error_password = document.querySelector(".erro_password");
+  if (Inputpassword.value != confirm_password.value) {
+    error_password.classList.remove("hidden");
+  } else {
+    error_password.classList.add("hidden");
+  }
+
+  CreateUser();
+};
+
 createUser.addEventListener("click", (event) => {
   event.preventDefault();
 
-  alert("enviando formulario");
-
-  if (Inputpassword.value != confirm_password.value) {
-    console.log("senha errada");
-  } else {
-    CreateUser();
-  }
-
-  console.log(email.value);
+  validarPassword();
 });
