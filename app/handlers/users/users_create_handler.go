@@ -3,9 +3,8 @@ package users
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
-	"log"
 	"net/http"
+	respostas "webapp/app/response"
 )
 
 func CreateUser(w http.ResponseWriter, req *http.Request) {
@@ -18,16 +17,24 @@ func CreateUser(w http.ResponseWriter, req *http.Request) {
 	})
 
 	if err != nil {
-		log.Fatal(err)
+		respostas.JSON(w, http.StatusBadRequest, respostas.Err{Erro: err.Error()})
+		return
 	}
 
 	response, err := http.Post("https://devbook-zqaw.onrender.com/create/user", "application/json", bytes.NewBuffer(users))
 	if err != nil {
-		log.Fatal(err)
+
+		respostas.JSON(w, http.StatusInternalServerError, respostas.Err{Erro: err.Error()})
+		return
 	}
 
 	defer response.Body.Close()
 
-	fmt.Println(response.Body)
+	if response.StatusCode >= 400 {
+		respostas.StatusCodeErr(w, response)
+		return
+	}
+
+	respostas.JSON(w, response.StatusCode, nil)
 
 }

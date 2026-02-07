@@ -29,25 +29,34 @@
             </div>
             <div class="p-20 rounded-sm h-auto r-auto">
                 <div class="p-4 shadow-[0px_1px_2px_#808080] rounded-sm">
-                    <form class="flex flex-col gap-3 items-center w-full">
+                    <form
+                        class="forms flex flex-col gap-3 items-center w-full"
+                        method="POST"
+                    >
                         <span class="text-center text-[#404040]"
                             >Seja bem vindo(a) ao Devbook</span
                         >
                         <div>
-                            <label class="text-[#404040]">Email:</label><br />
+                            <label for="email" class="text-[#404040]"
+                                >Email</label
+                            ><br />
                             <input
                                 type="tex"
                                 name="email"
+                                id="email"
                                 placeholder="Digite seu email"
                                 required="required"
                                 class="outline-none border border-[#808080] text-[#808080] rounded-sm h-[50px] pt-0 pb-0 pr-[20px] pl-[38px] outline:focus-none"
                             />
                         </div>
                         <div>
-                            <label class="text-[#404040]">Senha:</label><br />
+                            <label for="password" class="text-[#404040]"
+                                >Senha</label
+                            ><br />
                             <input
                                 type="password"
                                 name="password"
+                                id="password"
                                 required="required"
                                 class="outline-none border border-[#737373] text-[#808080] rounded-sm h-[50px] pt-0 pb-0 pr-[20px] pl-[38px]"
                             />
@@ -55,7 +64,7 @@
                         <div class="flex flex-col items-center gap-2">
                             <button
                                 type="submit"
-                                class="border border-[#4A3AFF] p-2 rounded-sm text-[#4A3AFF] text-center cursor-pointer w-[310px]"
+                                class="login border border-[#4A3AFF] p-2 rounded-sm text-[#4A3AFF] text-center cursor-pointer w-[310px]"
                             >
                                 Entrar
                             </button>
@@ -69,5 +78,6 @@
                 </div>
             </div>
         </div>
+        <script src="../assets/js/login.js"></script>
     </body>
 </html>

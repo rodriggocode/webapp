@@ -7,6 +7,6 @@ import (
 
 func LoginRouter(router *http.ServeMux) {
 	router.HandleFunc("/", handlers.Login)
-	router.HandleFunc("/login", handlers.Login)
-
+	router.HandleFunc("/logar", handlers.Login)
+	router.HandleFunc("/login", handlers.PostLogin)
 }
