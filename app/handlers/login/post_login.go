@@ -3,9 +3,9 @@ package login
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
-	"io"
+
 	"net/http"
+	"webapp/app/models"
 	resposta "webapp/app/response"
 )
 
@@ -21,15 +21,27 @@ func PostLogin(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	urlApit := "https://devbook-zqaw.onrender.com/login"
+	urlApi := "https://devbook-zqaw.onrender.com/login"
 
-	response, err := http.Post(urlApit, "application/json", bytes.NewBuffer(user))
+	response, err := http.Post(urlApi, "application/json", bytes.NewBuffer(user))
 	if err != nil {
 		resposta.JSON(w, http.StatusInternalServerError, resposta.Err{Erro: err.Error()})
 		return
 	}
 
-	token, _ := io.ReadAll(response.Body)
+	defer response.Body.Close()
 
-	fmt.Println(response.StatusCode, string(token))
+	if response.StatusCode >= 400 {
+		resposta.StatusCodeErr(w, response)
+		return
+	}
+
+	var dateAuth models.DadoAtuh
+	if err = json.NewDecoder(req.Body).Decode(&dateAuth); err != nil {
+		resposta.JSON(w, http.StatusUnprocessableEntity, resposta.Err{Erro: err.Error()})
+		return
+	}
+
+	resposta.JSON(w, http.StatusOK, nil)
+
 }

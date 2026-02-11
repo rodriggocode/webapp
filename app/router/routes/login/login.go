@@ -6,7 +6,7 @@ import (
 )
 
 func LoginRouter(router *http.ServeMux) {
-	router.HandleFunc("/", handlers.Login)
-	router.HandleFunc("/logar", handlers.Login)
-	router.HandleFunc("/login", handlers.PostLogin)
+	router.HandleFunc("/", handlers.Login)          // aqui mostra a tela de login
+	router.HandleFunc("/logar", handlers.Login)     // aqui mostra a tela de login tmb
+	router.HandleFunc("/login", handlers.PostLogin) // aqui tem que ficar /login da url da api
 }

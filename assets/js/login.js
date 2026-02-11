@@ -27,10 +27,11 @@ const LoginForm = async () => {
       const errorData = await response.json();
     }
   } catch (erro) {
-    console.log("Deu um Erro");
+    console.log("Erro na requisicao");
   }
 };
 
 loginUser.addEventListener("click", (event) => {
+  event.preventDefault();
   LoginForm();
 });
