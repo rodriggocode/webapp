@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 
 	"net/http"
+	"webapp/app/cookies"
 	"webapp/app/models"
 	resposta "webapp/app/response"
 )
@@ -37,8 +38,18 @@ func PostLogin(w http.ResponseWriter, req *http.Request) {
 	}
 
 	var dateAuth models.DadoAtuh
-	if err = json.NewDecoder(req.Body).Decode(&dateAuth); err != nil {
+	if err = json.NewDecoder(response.Body).Decode(&dateAuth); err != nil {
 		resposta.JSON(w, http.StatusUnprocessableEntity, resposta.Err{Erro: err.Error()})
+		return
+	}
+
+	if response.StatusCode >= 200 && response.StatusCode < 300 {
+		cookies.SetCookie(w, dateAuth.Token)
+
+		resposta.JSON(w, http.StatusOK, map[string]string{
+			"redirect": "/home",
+		})
+
 		return
 	}
 

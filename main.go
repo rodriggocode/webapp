@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"webapp/app/config"
-	"webapp/app/cookies"
 	"webapp/app/router"
 	"webapp/app/utils"
 )
@@ -13,7 +12,6 @@ import (
 func main() {
 
 	config.LoadConfig()
-	cookies.SetCookie()
 
 	port := config.Port
 

@@ -12,6 +12,7 @@ const LoginForm = async () => {
     const date = {
       method: "POST",
       headers: headers,
+      credentials: "include",
       body: JSON.stringify({
         email: email,
         password: password,

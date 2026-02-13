@@ -3,20 +3,30 @@ package cookies
 import (
 	"fmt"
 	"net/http"
-	"webapp/app/config"
 )
 
-func SetCookie(w http.ResponseWriter, req *http.Request) {
-	cookie_env := config.HasKey
+// cria o cookie
+func SetCookie(w http.ResponseWriter, token string) {
 	cookie := http.Cookie{
 		Name:     "access_token",
-		Value:    string(cookie_env), // aqui eu vou coloca o que vem do meu .env
+		Value:    token,
 		MaxAge:   3600,
 		Path:     "/",
 		HttpOnly: true,
 		Secure:   true,
+		SameSite: http.SameSiteNoneMode,
 	}
 
 	http.SetCookie(w, &cookie)
 	fmt.Fprintln(w, "cookie has been set!")
+}
+
+// ler o cookie
+func ReadToken(req *http.Request) (string, error) {
+	cookie, err := req.Cookie("access_token")
+	if err != nil {
+		return "", err
+	}
+
+	return cookie.Value, nil
 }

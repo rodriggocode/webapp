@@ -9,3 +9,7 @@ import (
 func LoadPageCreateUser(w http.ResponseWriter, req *http.Request) {
 	utils.ExecuterTemplate(w, "cadastro.html", nil)
 }
+
+func LoadHomePage(w http.ResponseWriter, req *http.Request) {
+	utils.ExecuterTemplate(w, "home.html", nil)
+}
