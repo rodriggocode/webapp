@@ -7,7 +7,6 @@ app = 'webapp-delicate-butterfly-8620'
 primary_region = 'gru'
 
 [build]
-    GO_VERSION = '1.25.6'
     builder = "paketobuildpacks/builder:base"
 
 [env]
