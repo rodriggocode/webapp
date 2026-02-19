@@ -13,7 +13,7 @@ func RequestAuth(req *http.Request, method, url string, date io.Reader) (*http.R
 	}
 
 	cookie, _ := cookies.ReadToken(req)
-	request.Header.Add("Authorization", "Bearer "+cookie["token"])
+	request.Header.Add("Authorization", "Bearer "+cookie)
 
 	client := &http.Client{}
 	response, err := client.Do(request)
