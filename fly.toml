@@ -7,7 +7,7 @@ app = 'webapp-delicate-butterfly-8620'
 primary_region = 'gru'
 
 [build]
-    builder = "paketobuildpacks/builder:full-cnb"
+    builder = "paketobuildpacks/builder:base"
 
 [env]
   PORT = '7070'
