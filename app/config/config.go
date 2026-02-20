@@ -21,7 +21,7 @@ func LoadConfig() {
 		log.Fatal(err)
 	}
 
-	Port, err = strconv.Atoi(os.Getenv("APP_PORT"))
+	Port, err = strconv.Atoi(os.Getenv("PORT"))
 	if err != nil {
 		log.Fatal()
 	}
