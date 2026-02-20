@@ -17,14 +17,24 @@ var (
 
 func LoadConfig() {
 	var err error
+
 	if err = godotenv.Load(); err != nil {
-		log.Fatal(err)
+		log.Println("Aviso: Nao foi possivel carregar o arquivo .env")
 	}
 
-	Port, err = strconv.Atoi(os.Getenv("PORT"))
-	if err != nil {
-		log.Fatal()
+	portStr := os.Getenv("PORT")
+	if portStr == "" {
+		portStr = "7070"
+		log.Println("Variavel de ambiente PORT nao definida, usando padrao 7070")
 	}
+
+	Port, err = strconv.Atoi(portStr)
+	if err != nil {
+		log.Fatalf("Erro ao converter PORT '%s' para numero, %v", portStr, err)
+	}
+
+	log.Printf("Aplicao configurada para escutar na port %d", Port)
+
 	APIURL = os.Getenv("API_URL")
 	HasKey = []byte(os.Getenv("HAS_KEY"))
 	BlockKey = []byte(os.Getenv("BLOCK_KEY"))
