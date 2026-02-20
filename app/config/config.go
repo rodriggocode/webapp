@@ -17,15 +17,14 @@ var (
 
 func LoadConfig() {
 	var err error
-
 	if err = godotenv.Load(); err != nil {
 		log.Println("Aviso: Nao foi possivel carregar o arquivo .env")
 	}
 
 	portStr := os.Getenv("PORT")
 	if portStr == "" {
-		portStr = "7070"
-		log.Println("Variavel de ambiente PORT nao definida, usando padrao 7070")
+		portStr = "8080" // Alterado para 8080 para consistencia com fly.toml
+		log.Println("Variavel de ambiente PORT nao definida, usando padrao 8080")
 	}
 
 	Port, err = strconv.Atoi(portStr)
