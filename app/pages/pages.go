@@ -16,21 +16,21 @@ func LoadPageCreateUser(w http.ResponseWriter, req *http.Request) {
 	utils.ExecuterTemplate(w, "cadastro.html", nil)
 }
 
-func LoadHomePage(w http.ResponseWriter) {
-	url := fmt.Sprintf("%s/posts", config.APIURL) // Use remote's URL path, keep 'res' var name
-	res, err := request.RequestAuth(w, http.MethodGet, url, nil) // Adjusted for RequestAuth signature
+func LoadHomePage(w http.ResponseWriter, req *http.Request) {
+	url := fmt.Sprintf("%s/posts", config.APIURL)
+	res, err := request.RequestAuth(req, http.MethodGet, url, nil)
 	if err != nil {
 		response.JSON(w, http.StatusInternalServerError, response.Err{Erro: err.Error()})
 		return
 	}
-	defer res.Body.Close() // Keep local's correct defer
+	defer res.Body.Close()
 	if res.StatusCode >= 400 {
 		response.StatusCodeErr(w, res) // Keep local's correct var name
 		return
 	}
 
 	var posts []models.Posts
-	if err = json.NewDecoder(res.Body).Decode(&posts); err != nil { // Keep local's logic for decoding posts
+	if err = json.NewDecoder(res.Body).Decode(&posts); err != nil {
 		response.JSON(w, http.StatusUnprocessableEntity, response.Err{Erro: err.Error()})
 		return
 	}
