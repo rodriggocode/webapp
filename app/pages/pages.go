@@ -2,7 +2,7 @@
 package pages
 
 import (
-	"encoding/json"
+	"encoding/json" // Keep this import
 	"fmt"
 	"net/http"
 	"webapp/app/config"
@@ -16,21 +16,21 @@ func LoadPageCreateUser(w http.ResponseWriter, req *http.Request) {
 	utils.ExecuterTemplate(w, "cadastro.html", nil)
 }
 
-func LoadHomePage(w http.ResponseWriter, req *http.Request) {
-	url := fmt.Sprintf("%sposts", config.APIURL)
-	res, err := request.RequestAuth(req, http.MethodGet, url, nil)
+func LoadHomePage(w http.ResponseWriter) {
+	url := fmt.Sprintf("%s/posts", config.APIURL) // Use remote's URL path, keep 'res' var name
+	res, err := request.RequestAuth(w, http.MethodGet, url, nil) // Adjusted for RequestAuth signature
 	if err != nil {
 		response.JSON(w, http.StatusInternalServerError, response.Err{Erro: err.Error()})
 		return
 	}
-	defer res.Body.Close()
+	defer res.Body.Close() // Keep local's correct defer
 	if res.StatusCode >= 400 {
-		response.StatusCodeErr(w, res)
+		response.StatusCodeErr(w, res) // Keep local's correct var name
 		return
 	}
 
 	var posts []models.Posts
-	if err = json.NewDecoder(res.Body).Decode(&posts); err != nil {
+	if err = json.NewDecoder(res.Body).Decode(&posts); err != nil { // Keep local's logic for decoding posts
 		response.JSON(w, http.StatusUnprocessableEntity, response.Err{Erro: err.Error()})
 		return
 	}

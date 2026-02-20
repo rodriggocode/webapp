@@ -19,7 +19,7 @@ func Auth(nextFunction http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 		_, err := cookies.ReadToken(req)
 		if err != nil {
-			http.Error(w, "Nao autorizado", http.StatusUnauthorized)
+			http.Redirect(w, req, "/logar", 302)
 			return
 		}
 		nextFunction(w, req)

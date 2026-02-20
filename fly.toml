@@ -3,34 +3,39 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "seu-app-devbook" # Substitua por um nome único para sua aplicação no Fly.io
-primary_region = "gru" # Escolha a região mais próxima de você ou dos seus usuários (ex: gru para São Paulo)
+app = 'webapp-delicate-butterfly-8620' # Nome da sua aplicação no Fly.io (gerado pelo fly launch)
+primary_region = 'gru' # Região que você escolheu no 'fly launch'
 
 [build]
-  builder = "paketobuildpacks/builder-jammy-base" # Builder padrão do Fly.io, pode ser omitido se usar Dockerfile
+  # builder = "paketobuildpacks/builder-jammy-base" # Esta linha é mais relevante se você não usa Dockerfile.
+                                                  # Como temos um Dockerfile, esta seção 'build' pode ser omitida ou ajustada.
+                                                  # Para simplicidade, vou manter a que estava no remoto e que deve ter funcionado.
+  builder = "paketobuildpacks/builder:base"
 
 [env]
-  # Defina aqui as variáveis de ambiente que sua aplicação precisa
   # O Fly.io injeta a porta na variável PORT por padrão.
-  # Se sua aplicação espera "APP_PORT", você tem duas opções:
-  # 1. Mudar o código Go para ler "PORT" (recomendado)
-  # 2. Adicionar a variável APP_PORT aqui, mapeando para PORT. Ex: APP_PORT = "$PORT"
+  # Sua aplicação Go agora lê "PORT" (conforme corrigido no config.go).
+  # Este "PORT = '7070'" no fly.toml é redundante se sua aplicação
+  # já lê os.Getenv("PORT"), mas não causa problema.
+  PORT = '7070' 
 
-  # Exemplo de variáveis de ambiente:
+  # Adicione outras variáveis de ambiente específicas da sua aplicação aqui,
+  # ou use 'fly secrets set' para variáveis sensíveis.
+  # Exemplo:
   # API_URL = "https://sua-api.com"
   # HAS_KEY = "sua_chave_de_hash"
   # BLOCK_KEY = "sua_chave_de_bloco"
-  # DATABASE_URL = "postgres://user:pass@host:port/dbname" # Se usar banco de dados externo
 
 [http_service]
-  internal_port = 8080 # A porta que sua aplicação Go está escutando internamente no contêiner
+  internal_port = 7070 # A porta que sua aplicação Go está escutando internamente no contêiner
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = true # Pode ser 'stop' (string) ou true (booleano) dependendo da versão do fly.toml
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
 
-# Se você precisar de um banco de dados PostgreSQL gerenciado pelo Fly.io:
-# Você pode provisionar um com 'fly postgres create' e depois anexar com 'fly postgres attach'
-# O Fly.io então injetará a DATABASE_URL na sua aplicação.
-# Ou, se usar um banco externo, configure a DATABASE_URL na seção [env] acima.
+[[vm]]
+  memory = '1gb' # Memória alocada para sua VM (1GB)
+  cpu_kind = 'shared'
+  cpus = 1
+  # memory_mb = 1024 # 'memory' já define isso, esta linha é redundante
