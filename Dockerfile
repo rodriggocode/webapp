@@ -9,9 +9,9 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o main ./main.go
+RUN go build -o main -ldflags '-s -w' ./main.go
 
-FROM alpine/git
+FROM alpine:latest
 
 WORKDIR /app
 
