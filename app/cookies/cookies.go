@@ -1,7 +1,6 @@
 package cookies
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -18,7 +17,6 @@ func SetCookie(w http.ResponseWriter, token string) {
 	}
 
 	http.SetCookie(w, &cookie)
-	fmt.Fprintln(w, "cookie has been set!")
 }
 
 // ler o cookie
