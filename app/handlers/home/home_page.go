@@ -1,7 +1,10 @@
 package home
 
-import "net/http"
+import (
+	"net/http"
+	"webapp/app/utils"
+)
 
 func HomePage(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Ola"))
+	utils.ExecuterTemplate(w, "home.tml", nil)
 }
