@@ -2,13 +2,9 @@
 package pages
 
 import (
-	"encoding/json" // Keep this import
-	"fmt"
+	// Keep this import
+
 	"net/http"
-	"webapp/app/config"
-	"webapp/app/models"
-	"webapp/app/request"
-	"webapp/app/response"
 	utils "webapp/app/utils"
 )
 
@@ -17,7 +13,7 @@ func LoadPageCreateUser(w http.ResponseWriter, req *http.Request) {
 }
 
 func LoadHomePage(w http.ResponseWriter, req *http.Request) {
-	url := fmt.Sprintf("%s/posts", config.APIURL)
+	/*url := fmt.Sprintf("%s/posts", config.APIURL)
 	res, err := request.RequestAuth(req, http.MethodGet, url, nil)
 	if err != nil {
 		response.JSON(w, http.StatusInternalServerError, response.Err{Erro: err.Error()})
@@ -33,7 +29,7 @@ func LoadHomePage(w http.ResponseWriter, req *http.Request) {
 	if err = json.NewDecoder(res.Body).Decode(&posts); err != nil {
 		response.JSON(w, http.StatusUnprocessableEntity, response.Err{Erro: err.Error()})
 		return
-	}
+		}*/
 
 	utils.ExecuterTemplate(w, "home.html", nil)
 }
