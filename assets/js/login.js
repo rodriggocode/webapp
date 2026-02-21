@@ -29,6 +29,7 @@ const LoginForm = async () => {
       //}, 5000);
     } else {
       const errorData = await response.json();
+      console.log("erro caindo aqui de nao autorizado");
     }
   } catch (erro) {
     console.log("Erro na requisicao");
