@@ -36,7 +36,7 @@ const LoginForm = async () => {
   }
 };
 
-loginUser.addEventListener("submit", (event) => {
+loginUser.addEventListener("click", (event) => {
   event.preventDefault();
   LoginForm();
 });
