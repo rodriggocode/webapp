@@ -23,7 +23,10 @@ const LoginForm = async () => {
     if (response.ok) {
       console.log("Login bem-sucedido!");
 
-      window.location.assign("/home");
+      //window.location.assign("/home");  aqui eu tenho que mudar para a url que vem do fly.io https://webapp-snowy-flower-2545.fly.dev/home
+      setTimeout(function () {
+        window.location.href = "https://webapp-snowy-flower-2545.fly.dev/home";
+      }, 5000);
     } else {
       const errorData = await response.json();
     }
