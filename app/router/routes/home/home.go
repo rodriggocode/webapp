@@ -9,7 +9,7 @@ import (
 
 func HomeRouter(router *http.ServeMux) {
 	//router.HandleFunc("/home", handlers.HomePage)                                            // carrega minha logica com o back
-	router.HandleFunc("/home-page", handlers.HomePage) // carrega minha pagina de home.html
+	router.HandleFunc("/home", handlers.HomePage) // carrega minha pagina de home.html
 
-	router.HandleFunc("/home", middlewares.Logger(middlewares.Auth(page.LoadHomePage)))
+	router.HandleFunc("/home-page", middlewares.Logger(middlewares.Auth(page.LoadHomePage)))
 }
