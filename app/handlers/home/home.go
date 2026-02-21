@@ -5,6 +5,6 @@ import (
 	"webapp/app/utils"
 )
 
-func HomePage(w http.ResponseWriter, req *http.Request) {
+func Home(w http.ResponseWriter, req *http.Request) {
 	utils.ExecuterTemplate(w, "home.tml", nil)
 }
