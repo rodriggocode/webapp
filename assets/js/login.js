@@ -20,16 +20,14 @@ const LoginForm = async () => {
     };
     const apiUrl = "/login";
     const response = await fetch(apiUrl, date);
-    const responseData = await response.json();
     if (response.ok) {
       console.log("Login bem-sucedido!");
 
-      window.location.href = responseData.redirect;
+      window.location.assign("/home");
     } else {
+      console.log("Deu um erro");
       const errorData = await response.json();
-      const erroMessage =
-        errorData.Erro || "O correu um erro desconheciado no servidor";
-      alert(erroMessage);
+      console.log(`Erro:${errorData}`);
     }
   } catch (erro) {
     console.log("Erro na requisicao");
