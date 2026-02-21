@@ -22,11 +22,7 @@ const LoginForm = async () => {
     const response = await fetch(apiUrl, date);
     if (response.ok) {
       console.log("Login bem-sucedido!");
-
-      //window.location.assign("/home");  aqui eu tenho que mudar para a url que vem do fly.io https://webapp-snowy-flower-2545.fly.dev/home
-      setTimeout(function () {
-        window.location.href = "https://webapp-snowy-flower-2545.fly.dev/home";
-      }, 5000);
+      window.location.href = "https://webapp-snowy-flower-2545.fly.dev/home";
     } else {
       const errorData = await response.json();
     }
