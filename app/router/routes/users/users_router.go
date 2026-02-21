@@ -7,6 +7,6 @@ import (
 )
 
 func RouterUsers(router *http.ServeMux) {
-	router.HandleFunc("/create/user", handlers.CreateUser)
-	router.HandleFunc("/cadastrar/usuario", pages.LoadPageCreateUser)
+	router.HandleFunc("/create/user", handlers.CreateUser)            // api
+	router.HandleFunc("/cadastrar/usuario", pages.LoadPageCreateUser) // mostra o html
 }
