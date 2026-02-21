@@ -18,26 +18,24 @@ const LoginForm = async () => {
         password: password,
       }),
     };
-    const apiUrl = "/login";
+    const apiUrl = "https://devbook-zqaw.onrender.com/login";
     const response = await fetch(apiUrl, date);
-    const responseData = await response.json();
     if (response.ok) {
       console.log("Login bem-sucedido!");
 
       //window.location.assign("/home");  aqui eu tenho que mudar para a url que vem do fly.io https://webapp-snowy-flower-2545.fly.dev/home
       setTimeout(function () {
-        window.location.href = responseData.redirect;
+        window.location.href = "https://webapp-snowy-flower-2545.fly.dev/home";
       }, 5000);
     } else {
       const errorData = await response.json();
-      console.log("nao autorizado");
     }
   } catch (erro) {
     console.log("Erro na requisicao");
   }
 };
 
-loginUser.addEventListener("submit", (event) => {
+loginUser.addEventListener("click", (event) => {
   event.preventDefault();
   LoginForm();
 });
