@@ -20,23 +20,24 @@ const LoginForm = async () => {
     };
     const apiUrl = "/login";
     const response = await fetch(apiUrl, date);
+    const responseData = await response.json();
     if (response.ok) {
       console.log("Login bem-sucedido!");
 
-      window.location.assign("/home");
-      // setTimeout(function () {
-      // window.location.href = "https://webapp-snowy-flower-2545.fly.dev/home";
-      //}, 5000);
+      //window.location.assign("/home");  aqui eu tenho que mudar para a url que vem do fly.io https://webapp-snowy-flower-2545.fly.dev/home
+      setTimeout(function () {
+        window.location.href = responseData.redirect;
+      }, 5000);
     } else {
       const errorData = await response.json();
-      console.log("erro caindo aqui de nao autorizado");
+      console.log("nao autorizado");
     }
   } catch (erro) {
     console.log("Erro na requisicao");
   }
 };
 
-loginUser.addEventListener("click", (event) => {
+loginUser.addEventListener("submit", (event) => {
   event.preventDefault();
   LoginForm();
 });
