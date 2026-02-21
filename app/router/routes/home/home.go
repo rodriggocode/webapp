@@ -7,6 +7,6 @@ import (
 )
 
 func HomeRouter(router *http.ServeMux) {
-	router.HandleFunc("/home", handlers.Home)          // vem da api
-	router.HandleFunc("home-page", pages.LoadHomePage) // html front
+	router.HandleFunc("/home", handlers.Home)           // vem da api
+	router.HandleFunc("/home-page", pages.LoadHomePage) // html front
 }
