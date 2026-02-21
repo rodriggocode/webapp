@@ -18,7 +18,7 @@ const LoginForm = async () => {
         password: password,
       }),
     };
-    const apiUrl = "/login";
+    const apiUrl = "https://devbook-zqaw.onrender.com/publicacoes";
     const response = await fetch(apiUrl, date);
     const responseData = await response.json();
     if (response.ok) {
