@@ -15,6 +15,7 @@ const CreateUser = async () => {
     const date = {
       method: "POST",
       headers: headers,
+      credentials: "include",
       body: JSON.stringify({
         user_name: user_name,
         nick: nick,

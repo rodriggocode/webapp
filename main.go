@@ -15,12 +15,12 @@ func main() {
 
 	port := config.Port
 
-	address := "http://localhost:7070"
+	address := fmt.Sprintf("http://0.0.0.0:%d", port)
 
 	utils.LoadingTemplates()
 
 	r := router.Gerar()
 
-	fmt.Printf("Rodando WebApp %s\n", address)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), r))
+	fmt.Printf("Rodando WebApp em %s\n", address)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", port), r))
 }
