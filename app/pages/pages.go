@@ -25,7 +25,7 @@ func LoadHomePage(w http.ResponseWriter, req *http.Request) {
 	}
 	defer res.Body.Close()
 	if res.StatusCode >= 400 {
-		response.StatusCodeErr(w, res) // Keep local's correct var name
+		response.StatusCodeErr(w, res)
 		return
 	}
 
