@@ -24,7 +24,7 @@ const LoginForm = async () => {
     if (response.ok) {
       console.log("Login bem-sucedido!");
 
-      window.location.href = responseData.redirect;
+      window.location.href = "https://webapp-snowy-flower-2545.fly.dev/home";
     } else {
       const errorData = await response.json();
       const erroMessage =
