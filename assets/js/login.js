@@ -22,7 +22,7 @@ const LoginForm = async () => {
     const response = await fetch(apiUrl, date);
     if (response.ok) {
       console.log("Login bem-sucedido!");
-      window.location.href = "https://webapp-snowy-flower-2545.fly.dev/home";
+      window.location.href = "https://devbook-zqaw.onrender.com/publicacoes";
     } else {
       const errorData = await response.json();
     }
