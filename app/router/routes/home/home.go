@@ -8,6 +8,6 @@ import (
 )
 
 func HomeRouter(router *http.ServeMux) {
-	router.HandleFunc("/logar", handlers.Home)                                            // vem da api
-	router.HandleFunc("/login", middlewares.Logger(middlewares.Auth(pages.LoadHomePage))) // html front
+	router.HandleFunc("/publicacoes", handlers.Home)                                     // vem da api
+	router.HandleFunc("/home", middlewares.Logger(middlewares.Auth(pages.LoadHomePage))) // html front
 }
