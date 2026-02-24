@@ -45,7 +45,6 @@ func PostLogin(w http.ResponseWriter, req *http.Request) {
 
 	if response.StatusCode >= 200 && response.StatusCode < 300 {
 		cookies.SetCookie(w, dateAuth.Token)
-		w.WriteHeader(http.StatusOK)
 
 		resposta.JSON(w, http.StatusOK, map[string]string{
 			"redirect": "/home",
