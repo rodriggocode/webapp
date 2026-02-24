@@ -3,6 +3,7 @@ package login
 import (
 	"bytes"
 	"encoding/json"
+	"log"
 
 	"net/http"
 	"webapp/app/cookies"
@@ -12,6 +13,8 @@ import (
 
 func PostLogin(w http.ResponseWriter, req *http.Request) {
 	req.ParseForm()
+
+	log.Printf("Email rebido: %s", req.FormValue("Email"))
 
 	user, err := json.Marshal(map[string]string{
 		"email":    req.FormValue("email"),
