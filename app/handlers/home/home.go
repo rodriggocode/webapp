@@ -5,5 +5,5 @@ import (
 )
 
 func Home(w http.ResponseWriter, req *http.Request) {
-	w.Header([]byte("teste"))
+	w.Write([]byte("teste"))
 }
