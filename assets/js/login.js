@@ -21,7 +21,7 @@ const LoginForm = async () => {
         const apiUrl = "/login";
         const response = await fetch(apiUrl, date);
         if (response.ok) {
-            setTimeout(() => console.log("Login bem-sucedido!"), 2000);
+            console.log("Login bem-sucedido!");
             window.location.assign("/home");
         } else {
             const errorData = await response.json();
