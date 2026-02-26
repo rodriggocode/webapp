@@ -34,5 +34,5 @@ func LoadHomePage(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	fmt.Println(resp.StatusCode, err)
-	utils.ExecuterTemplate(w, "home.html", nil) // tirar o post, so para questao de teste
+	utils.ExecuterTemplate(w, "home.html", nil) // tirar o post, so para questao de teste depois eu volto com o posts
 }
