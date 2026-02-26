@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"webapp/app/config"
 	"webapp/app/request"
 	utils "webapp/app/utils"
 )
@@ -15,7 +14,7 @@ func LoadPageCreateUser(w http.ResponseWriter, req *http.Request) {
 }
 
 func LoadHomePage(w http.ResponseWriter, req *http.Request) {
-	url := fmt.Sprintf("%s/publicacoes", config.APIURL)
+	url := fmt.Sprintf("%s/publicacoes", "https://devbook-zqaw.onrender.com/publicacoes")
 	resp, err := request.RequestAuth(req, http.MethodGet, url, nil)
 	if err != nil {
 		log.Printf("Erro ao buscar publicacoes: %v", err)
