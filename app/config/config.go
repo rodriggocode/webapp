@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	APIURL   = ""
+	APIURL   = "https://devbook-zqaw.onrender.com/"
 	Port     = 0
 	HasKey   []byte // autenticar o cookie
 	BlockKey []byte // criptografar os dados do cookie
