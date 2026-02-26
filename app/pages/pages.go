@@ -22,7 +22,7 @@ func LoadHomePage(w http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Printf("Erro ao buscar publicacoes: %v", err)
 		response.JSON(w, http.StatusInternalServerError, response.Err{Erro: err.Error()})
-		//utils.ExecuterTemplate(w, "home.hml", nil)
+		utils.ExecuterTemplate(w, "home.hml", nil)
 		return
 	}
 	defer resp.Body.Close()

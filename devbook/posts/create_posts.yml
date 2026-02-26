@@ -1,0 +1,52 @@
+info:
+  name: create_posts
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://devbook-zqaw.onrender.com/publicacoes/criar
+  auth:
+    type: bearer
+    token: |
+      {
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      {
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      {
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+      }{
+        "id": "44",
+      {
+        "id": "44",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
