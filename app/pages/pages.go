@@ -3,7 +3,6 @@ package pages
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"webapp/app/models"
 	"webapp/app/request"
@@ -36,6 +35,5 @@ func LoadHomePage(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	fmt.Println(resp.StatusCode, err)
 	utils.ExecuterTemplate(w, "home.html", posts)
 }
