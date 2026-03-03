@@ -5,7 +5,16 @@ info:
 
 http:
   method: POST
-  url: https://devbook-zqaw.onrender.com/
+  url: https://devbook-zqaw.onrender.com/create/user
+  body:
+    type: json
+    data: |-
+      {
+        "user_name": "teste",
+        "nick": "testando",
+        "email": "teste@email.com",
+        "password": "123456"
+      }
   auth: inherit
 
 settings:

@@ -10,6 +10,9 @@ http:
     type: bearer
     token: |
       {
+        "id": "2",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzI1NjYyMTEsImlkX3VzZXIiOjJ9.gw05LTFq6bmdamJDEyiU7SE634s4qXdST7O5CPcvU_8"
+
         "id": "44",
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3NzIxMzc0MjMsImlkX3VzZXIiOjQ0fQ.3Z5iypPSf711yjyHfpwCC_u5u1SCliU_OBVW4NLSnbc"
       {
