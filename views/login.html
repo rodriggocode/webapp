@@ -1,80 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="PT-BR">
-    <header>
-        <meta charset="UTF-8" />
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-            rel="stylesheet"
-        />
+  <header>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link rel="icon" href="/assets/img/devbook-icon.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
 
-        <title>Login</title>
-    </header>
+    <title>Login</title>
+  </header>
 
-    <body cla="font-['Gueda']">
-        <header class="bg-zinc-900 p-5 text-white text-2xl font-[700]">
-            DevBook
-        </header>
-        <div
-            class="text-1xl font-regular bg-[#FFFFFF] text-white h-screen flex items-center justify-center gap-x-25"
+  <body class="text-[#EDEDED] bg-[#0C0C0C] min-h-screen w-full">
+    <main class="w-full min-h-screen">
+      <div>
+        <h1
+          class="text-[1.8rem] mt-[55px] ml-[40px] font-['Syne'] font-extrabold tracking-[-1px] text-[#EDEDED]"
         >
-            <div>
-                <img
-                    src="../assets/img/Devbook.png"
-                    alt="desenho de um homem"
-                    class="w-[280.02px] h-[292px]"
-                />
-            </div>
-            <div class="p-20 rounded-sm h-auto r-auto">
-                <div class="p-4 shadow-[0px_1px_2px_#808080] rounded-sm">
-                    <form class="forms flex flex-col gap-3 items-center w-full">
-                        <span class="text-center text-[#404040]"
-                            >Seja bem vindo(a) ao Devbook</span
-                        >
-                        <div>
-                            <label for="email" class="text-[#404040]"
-                                >Email</label
-                            ><br />
-                            <input
-                                type="tex"
-                                name="email"
-                                id="email"
-                                placeholder="Digite seu email"
-                                required="required"
-                                class="outline-none border border-[#808080] text-[#808080] rounded-sm h-[50px] pt-0 pb-0 pr-[20px] pl-[38px] outline:focus-none"
-                            />
-                        </div>
-                        <div>
-                            <label for="password" class="text-[#404040]"
-                                >Senha</label
-                            ><br />
-                            <input
-                                type="password"
-                                name="password"
-                                id="password"
-                                required="required"
-                                class="outline-none border border-[#737373] text-[#808080] rounded-sm h-[50px] pt-0 pb-0 pr-[20px] pl-[38px]"
-                            />
-                        </div>
-                        <div class="flex flex-col items-center gap-2">
-                            <button
-                                type="submit"
-                                class="login border border-[#4A3AFF] p-2 rounded-sm text-[#4A3AFF] text-center cursor-pointer w-[310px]"
-                            >
-                                Entrar
-                            </button>
-                            <a
-                                href="/cadastrar/usuario"
-                                class="border-b-1 border-t border-l border-r border-[#4A3AFF] p-2 rounded-sm text-center text-[#808080] w-[310px]"
-                                >Criar Conta</a
-                            >
-                        </div>
-                    </form>
-                </div>
-            </div>
+          Login
+        </h1>
+      </div>
+      <div class="flex items-center content-center justify-center justify-items-center  m-10 border border-[#5A5A5A] rounded-lg">
+        <!--div browver-->
+        <div>
         </div>
-        <script src="../assets/js/login.js"></script>
-    </body>
+        <!--barra de navegacao-->
+        <div class="flex m-0 p-2">
+          <!--login-->
+          <div class="ml-15">
+            <div
+              class="font-['Syne'] text-[2rem] text-[#FF6B2B] font-extrabold mr-80"
+            >
+              Devbook
+            </div>
+            <div
+              class="font-['Syne'] text-[2rem] text-[#EDEDED] font-extrabold"
+            >
+              Onde devs
+              <br />
+              se
+              <span
+                class="font-['Syne'] text-[#FF6B2B] text-[2rem] font-extrabold"
+                >conectam.</span
+              >
+            </div>
+            <div
+              class="font-['DM Sans'] text-[0.77rem] text-[#5A5A5A] font-normal block relative"
+            >
+              Compartilhe conhecimento, siga outros devs e construa sua presenca
+              na comunidade.
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center bg-[#161616] min-h-screen w-full p-5 border-l-1 border-[#5A5A5A]">
+          <h1 class="font-['Syne'] text-[1.4rem] font-bold text-[#EDEDED]">
+            Bem-Vindo de volta
+          </h1>
+          <span
+            class="text-[#5A5A5A] font-['DM Sans'] font-normal text-[0.77rem] mb-[32px]"
+            >Entre na sua conta para continuar</span
+          >
+          <div class="mt-5 p-5 mb-25">
+            <form class="forms flex flex-col justify-items-center  m-5">
+              <label for="email" class="text-[0.72rem] text-[#5A5A5A]">EMAIL</label>
+              <input
+                type="email"
+                placeholder="exemplo@email.com"
+                name="email"
+                id="email"
+                class="email border border-[#5A5A5A] py-3 px-4 mb-5 rounded-[8px] outline-none focus:bg-[#0C0C0C] w-[100%] bg-[#0C0C0C] text-[#EDEDED] text-[0.85rem] font-['DM Sans']"
+              />
+              <label for="password" class="text-[0.72rem] text-[#5A5A5A]">SENHA</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="password border border-[#5A5A5A] py-3 px-4 mb-5 rounded-[8px] w-[100%] bg-[#0C0C0C] font-['DM Sans'] w-[100%] outline-none text-[#EDEDED] text-[0.85rem]"
+               />
+              <button type="submit" class="login flex items-center bg-[#FF6B2B] py-3 px-4 rounded-[8px] w-[500px] cursor-pointer mt-[8px]">
+                <p class=" text-[0.88rm] font-semibold">Entrar</p>
+              </button>
+              <div>
+              </div>
+            </form>
+            <button class="border flex items-center border-[#222222] p-[12px] w-[499px] ml-5 rounded-[8px] cursor-pointer">
+              <a href="/cadastrar/usuario" class="text-[0.85rem] font-['DM Sans']">Criar conta</a>
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../assets/js/login.js"></script>
+  </body>
 </html>
