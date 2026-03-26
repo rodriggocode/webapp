@@ -1,153 +1,225 @@
 <!doctype html>
 <html lang="PT-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Cadastro de Usuario</title>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..800;1,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <script
-            src="https://kit.fontawesome.com/c0e32f71af.js"
-            crossorigin="anonymous"
-        ></script>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/img/devbook-icon.svg"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c0e32f71af.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-    <body class="font-['Gudea'] h-screen w-auto">
-        <header class="bg-zinc-900 text-white p-5">
-            <h1 class="font-black text-center text-3xl">Criar Conta</h1>
-        </header>
-        <main
-            class="text-[18px] go h-screen w-auto flex items-center justify-center gap-x-25 h-auto"
-        >
-            <div>
-                <img
-                    src="../assets/img/Devbook.png"
-                    class="w-[280.02px] h-[292px]"
-                />
+  <body class="bg-[#0C0C0C] h-screen w-auto">
+    <main>
+      <div
+        class="font-['Syne'] font-extrabold text-[1.8rem] text-[#EDEDED] mb-8 mt-[50px] ml-[70px]"
+      >
+        <h1>Cadastrar</h1>
+      </div>
+
+      <!--browser-->
+      <div
+        class="border border-[#2A2A2A] rounded-4 box-shadow: 0 40px 80px rgba(0,0,0,0.6)"
+      >
+        <div class="grid grid-cols-2">
+          <!--toda parte do form-->
+          <div class="flex flex-col justify-center relative py-[60px] px-12">
+            <!--left-->
+            <div
+              class="font-['Syne'] text-[2rem] font-extrabold text-[#FF6B2B] mb-[40px]"
+            >
+              Devbook
             </div>
             <div
-                class="p-4 shadow-[0px_1px_2px_#808080] rounded-sm w-[50%] max-h-auto"
+              class="text-[#EDEDED] text-[2rem] font-['Syne'] font-extrabold"
             >
-                <form class="forms flex flex-col items-center gap-5">
-                    <labal class="text-[#404040]">Nome</labal>
-                    <input
-                        type="text"
-                        name="user_name"
-                        id="user_name"
-                        placeholder="Digite seu nome"
-                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
-                    />
-                    <span
-                        class="name_valid text-red-900 text-sm font-semibold flex hidden"
-                        >O campo nome nao pode ser vazio</span
-                    >
-                    <label class="text-[#404040]">Nick</label>
-                    <input
-                        type="text"
-                        name="nick"
-                        id="nick"
-                        placeholder="Digite seu nick"
-                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
-                    />
-                    <span
-                        class="valid_nick text-red-900 text-sm font-semibold flex hidden"
-                        >O nick nao pode ser um campo vazio.</span
-                    >
-                    <span
-                        class="valid_leng text-red-900 text-sm font-semibold flex hidden"
-                        >O nick nao pode ser menor que 6 caracteres</span
-                    >
-                    <label class="text-[#404040]">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="exemplo@email.com"
-                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
-                    />
-                    <span
-                        class="validate_email text-red-900 text-sm font-semibold flex hidden"
-                        >O email nao pode ser um capo vazio, e tem que ser um
-                        tipo valido</span
-                    >
-                    <label class="text-[#404040]">Senha</label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="*******"
-                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
-                    />
-                    <span
-                        class="password_caracter text-red-900 text-sm font-semibold flex hidden"
-                        >A senha tem que ter mais de 6 caracteres.</span
-                    >
-
-                    <label class="text-[#404040]">Confirmar senha</label>
-                    <input
-                        type="password"
-                        name="confirm_password"
-                        id="confirm_password"
-                        placeholder="*******"
-                        class="border border-[#808080] p-1 rounded-sm w-80 text-[#737373] focus:outline-none"
-                    />
-                    <span
-                        class="erro_password span_password text-red-900 text-sm font-semibold flex hidden"
-                        >As senhas nao conferem.</span
-                    >
-                </form>
-                <div class="flex justify-between mt-10">
-                    <button
-                        type="submit"
-                        class="btn-create border border-[#4A3AFF] p-2 rounded-sm cursor-pointer text-[#4A3AFF]"
-                    >
-                        Cadastrar
-                    </button>
-                    <button
-                        class="border border-[#4A3AFF] p-2 rounded-sm text-[#404040] cursor-pointer w-25"
-                    >
-                        <a href="/">Cancelar</a>
-                    </button>
-                </div>
+              Crie sua
+              <br />
+              conta na
+              <spa class="text-[#FF6B2B]">devbook</spa>
             </div>
-        </main>
-        <footer class="bg-zinc-900 w-auto p-5 text-[#9FE870] text-center">
-            <p class="font-medium text-2xl">
-                Desenvolvido por: &copyRodrigo Martins
-            </p>
-            <nav>
-                <ul class="flex justify-center row gap-x-5 text-[15px]">
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-github"></i>
-                            <span>Github</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-square-whatsapp"></i>
-                            <span>Whatsapp</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-linkedin"></i>
-                            <span>Linkedin</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
-        <script src="../assets/js/cadastro.js"></script>
-    </body>
+            <div
+              class="text-[0.88rem] font-['DM Sans'] text-[#5A5A5A] block mb-[40px] mx-w-[300px]"
+            >
+              Junte-se a milhares de desenvolvedores que compartilham
+              conhecimento e constroem sua presença na comunidade.
+            </div>
+            <div
+              class="flex flex-col content-center gap-1 text-[0.8rem] [14px] relative font-['DM Sans']"
+            >
+              <div class="flex flex-col">
+                <div class="feature-icon flex items-center gap-1">
+                  <span
+                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                  >
+                    ✍️
+                  </span>
+                  <strong class="text-[#EDEDED]"
+                    >Publique posts técnicos</strong
+                  >
+                </div>
+                <div class="text-[#5A5A5A] ml-9">
+                  Compartilhe artigos, tutoriais e aprendizados com a
+                  comunidade.
+                </div>
+              </div>
+              <div>
+                <div class="feature-icon flex items-center gap-1">
+                  <span
+                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                  >
+                    🔗
+                  </span>
+                  <strong class="text-[#EDEDED]">Conecte-se com devs</strong>
+                </div>
+                <div class="text-[#5A5A5A] ml-9">
+                  Siga pessoas com interesses parecidos e amplie sua rede.
+                </div>
+              </div>
+
+              <div>
+                <div class="feature-icon flex items-center gap-1">
+                  <span
+                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                    >🔥</span
+                  >
+                  <strong class="text-[#EDEDED]">Construa sua reputação</strong>
+                </div>
+                <div class="text-[#5A5A5A] ml-9">
+                  Posts em alta e conquistas que mostram seu crescimento.
+                </div>
+              </div>
+
+              <div>
+                <div class="feature-icon flex items-center gap-1">
+                  <span
+                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                  >
+                    ⚡
+                  </span>
+                  <strong class="text-[#EDEDED]">Feed personalizado</strong>
+                </div>
+                <div class="text-[#5A5A5A] ml-9">
+                  Conteúdo filtrado pelas tecnologias que você usa e ama.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#161616] py-[48px] px-[48px] flex flex-col h-screen">
+            <!--right form-->
+            <div
+              class="font-['Syne'] font-bold text-[#EDEDED] text-[1.4rem] mb-[6px]"
+            >
+              Criar conta
+            </div>
+            <div class="text-[0.7rem] text-[#5A5A5A] mb-1">
+              Preencha os dados abaixo para começar
+            </div>
+
+            <form class="flex flex-col gap-2">
+              <label
+                for="name"
+                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                >Nome</label
+              >
+              <input
+                type="text"
+                id="user_name"
+                name="user_name"
+                class="text-[#EDEDED] w-full bg-[#0C0C0C] border border-[#222222] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+              />
+              <label
+                for="nick"
+                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                >Nome do usuário</label
+              >
+              <input
+                type="text"
+                name="nick"
+                id="nick"
+                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+              />
+
+              <label
+                for="email"
+                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                >Email</label
+              >
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="exemplo@email.com"
+                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+              />
+
+              <label
+                for="password"
+                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                >Senha</label
+              >
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+              />
+              <label
+                for="confirm_password"
+                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                >Confirmar senha</label
+              >
+              <input
+                type="password"
+                name="confirm_password"
+                id="confirm_password"
+                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+              />
+            </form>
+            <div class="flex flex-col gap-3">
+              <button
+                type="submit"
+                class="btn-create w-full text-[#EDEDED] font-['DM Sans'] rounded-[8px] p-[13px] text-[0.88rem] cursor-pointer font-semibold mt-[4px] center bg-[#FF6B2B]"
+              >
+                Cadastrar
+              </button>
+              <button
+                class="w-full bg-transparent border border-[#222222] font-['DM Sans'] text-[0.85rem] text-[#EDEDED] p-[12px] cursor-pointer center rounded-[8px]"
+              >
+                <a href="/">Fazer login</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../assets/js/cadastro.js"></script>
+  </body>
 </html>
