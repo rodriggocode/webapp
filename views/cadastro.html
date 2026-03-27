@@ -1,225 +1,277 @@
 <!doctype html>
 <html lang="PT-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Cadastro</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../assets/img/devbook-icon.svg"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/c0e32f71af.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cadastro</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../assets/img/devbook-icon.svg"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/c0e32f71af.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-  <body class="bg-[#0C0C0C] h-screen w-auto">
-    <main>
-      <div
-        class="font-['Syne'] font-extrabold text-[1.8rem] text-[#EDEDED] mb-8 mt-[50px] ml-[70px]"
-      >
-        <h1>Cadastrar</h1>
-      </div>
-
-      <!--browser-->
-      <div
-        class="border border-[#2A2A2A] rounded-4 box-shadow: 0 40px 80px rgba(0,0,0,0.6)"
-      >
-        <div class="grid grid-cols-2">
-          <!--toda parte do form-->
-          <div class="flex flex-col justify-center relative py-[60px] px-12">
-            <!--left-->
+    <body class="bg-[#0C0C0C] h-screen w-auto">
+        <main>
             <div
-              class="font-['Syne'] text-[2rem] font-extrabold text-[#FF6B2B] mb-[40px]"
+                class="font-['Syne'] font-extrabold text-[1.8rem] text-[#EDEDED] mb-8 mt-[50px] ml-[70px]"
             >
-              Devbook
+                <h1>Cadastrar</h1>
             </div>
+
+            <!--browser-->
             <div
-              class="text-[#EDEDED] text-[2rem] font-['Syne'] font-extrabold"
+                class="border border-[#2A2A2A] rounded-4 box-shadow: 0 40px 80px rgba(0,0,0,0.6)"
             >
-              Crie sua
-              <br />
-              conta na
-              <spa class="text-[#FF6B2B]">devbook</spa>
-            </div>
-            <div
-              class="text-[0.88rem] font-['DM Sans'] text-[#5A5A5A] block mb-[40px] mx-w-[300px]"
-            >
-              Junte-se a milhares de desenvolvedores que compartilham
-              conhecimento e constroem sua presença na comunidade.
-            </div>
-            <div
-              class="flex flex-col content-center gap-1 text-[0.8rem] [14px] relative font-['DM Sans']"
-            >
-              <div class="flex flex-col">
-                <div class="feature-icon flex items-center gap-1">
-                  <span
-                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
-                  >
-                    ✍️
-                  </span>
-                  <strong class="text-[#EDEDED]"
-                    >Publique posts técnicos</strong
-                  >
-                </div>
-                <div class="text-[#5A5A5A] ml-9">
-                  Compartilhe artigos, tutoriais e aprendizados com a
-                  comunidade.
-                </div>
-              </div>
-              <div>
-                <div class="feature-icon flex items-center gap-1">
-                  <span
-                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
-                  >
-                    🔗
-                  </span>
-                  <strong class="text-[#EDEDED]">Conecte-se com devs</strong>
-                </div>
-                <div class="text-[#5A5A5A] ml-9">
-                  Siga pessoas com interesses parecidos e amplie sua rede.
-                </div>
-              </div>
+                <div class="grid grid-cols-2">
+                    <!--toda parte do form-->
+                    <div
+                        class="flex flex-col justify-center relative py-[60px] px-12"
+                    >
+                        <!--left-->
+                        <div
+                            class="font-['Syne'] text-[2rem] font-extrabold text-[#FF6B2B] mb-[40px]"
+                        >
+                            Devbook
+                        </div>
+                        <div
+                            class="text-[#EDEDED] text-[2rem] font-['Syne'] font-extrabold"
+                        >
+                            Crie sua
+                            <br />
+                            conta na
+                            <spa class="text-[#FF6B2B]">devbook</spa>
+                        </div>
+                        <div
+                            class="text-[0.88rem] font-['DM Sans'] text-[#5A5A5A] block mb-[40px] mx-w-[300px]"
+                        >
+                            Junte-se a milhares de desenvolvedores que
+                            compartilham conhecimento e constroem sua presença
+                            na comunidade.
+                        </div>
+                        <div
+                            class="flex flex-col content-center gap-1 text-[0.8rem] [14px] relative font-['DM Sans']"
+                        >
+                            <div class="flex flex-col">
+                                <div
+                                    class="feature-icon flex items-center gap-1"
+                                >
+                                    <span
+                                        class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                                    >
+                                        ✍️
+                                    </span>
+                                    <strong class="text-[#EDEDED]"
+                                        >Publique posts técnicos</strong
+                                    >
+                                </div>
+                                <div class="text-[#5A5A5A] ml-9">
+                                    Compartilhe artigos, tutoriais e
+                                    aprendizados com a comunidade.
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    class="feature-icon flex items-center gap-1"
+                                >
+                                    <span
+                                        class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                                    >
+                                        🔗
+                                    </span>
+                                    <strong class="text-[#EDEDED]"
+                                        >Conecte-se com devs</strong
+                                    >
+                                </div>
+                                <div class="text-[#5A5A5A] ml-9">
+                                    Siga pessoas com interesses parecidos e
+                                    amplie sua rede.
+                                </div>
+                            </div>
 
-              <div>
-                <div class="feature-icon flex items-center gap-1">
-                  <span
-                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
-                    >🔥</span
-                  >
-                  <strong class="text-[#EDEDED]">Construa sua reputação</strong>
+                            <div>
+                                <div
+                                    class="feature-icon flex items-center gap-1"
+                                >
+                                    <span
+                                        class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                                        >🔥</span
+                                    >
+                                    <strong class="text-[#EDEDED]"
+                                        >Construa sua reputação</strong
+                                    >
+                                </div>
+                                <div class="text-[#5A5A5A] ml-9">
+                                    Posts em alta e conquistas que mostram seu
+                                    crescimento.
+                                </div>
+                            </div>
+
+                            <div>
+                                <div
+                                    class="feature-icon flex items-center gap-1"
+                                >
+                                    <span
+                                        class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
+                                    >
+                                        ⚡
+                                    </span>
+                                    <strong class="text-[#EDEDED]"
+                                        >Feed personalizado</strong
+                                    >
+                                </div>
+                                <div class="text-[#5A5A5A] ml-9">
+                                    Conteúdo filtrado pelas tecnologias que você
+                                    usa e ama.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-[#161616] py-[48px] px-[48px] flex flex-col h-screen"
+                    >
+                        <!--right form-->
+                        <div
+                            class="font-['Syne'] font-bold text-[#EDEDED] text-[1.4rem] mb-[6px]"
+                        >
+                            Criar conta
+                        </div>
+                        <div class="text-[0.7rem] text-[#5A5A5A] mb-1">
+                            Preencha os dados abaixo para começar
+                        </div>
+
+                        <form class="forms flex flex-col gap-2">
+                            <label
+                                for="user_name"
+                                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                                >Nome</label
+                            >
+                            <input
+                                type="text"
+                                id="user_name"
+                                name="user_name"
+                                class="text-[#EDEDED] w-full bg-[#0C0C0C] border border-[#222222] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+                            />
+                            <span
+                                class="name_valid text-[#FF6B2B] text-[0.7rem] font-['DM Sans'] flex hidden"
+                                >O campo nome nao pode ser vazio</span
+                            >
+
+                            <label
+                                for="nick"
+                                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                                >Nome do usuário</label
+                            >
+                            <input
+                                type="text"
+                                name="nick"
+                                id="nick"
+                                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+                            />
+                            <span
+                                class="valid_nick text-[#FF6B2B] text-[0.7rem] font-['DM Sans'] flex hidden"
+                                >O nick nao pode ser um campo vazio.</span
+                            >
+
+                            <span
+                                class="valid_leng text-[#FF6B2B] text-[0.7rem] font-semibold flex hidden"
+                                >O nick nao pode ser menor que 6
+                                caracteres</span
+                            >
+
+                            <label
+                                for="email"
+                                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="exemplo@email.com"
+                                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+                            />
+                            <span
+                                class="validate_email text-[#FF6B2B] text-[0.7rem] font-['DM Sans'] flex hidden"
+                                >O email nao pode ser um capo vazio, e tem que
+                                ser um tipo valido</span
+                            >
+
+                            <label
+                                for="password"
+                                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                                >Senha</label
+                            >
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+                            />
+
+                            <span
+                                class="password_caracter text-[#FF6B2B] text-[0.7rem] font-['DM Sans'] flex hidden"
+                                >A senha tem que ter mais de 6 caracteres.</span
+                            >
+
+                            <label
+                                for="confirm_password"
+                                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
+                                >Confirmar senha</label
+                            >
+                            <input
+                                type="password"
+                                name="confirm_password"
+                                id="confirm_password"
+                                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
+                            />
+                            <span
+                                class="erro_password span_password text-[#FF6B2B] text-[0.7rem] font-['DM Sans'] flex hidden"
+                                >As senhas nao conferem.</span
+                            >
+                        </form>
+                        <div class="flex flex-col gap-3">
+                            <button
+                                type="submit"
+                                class="btn-create w-full text-[#EDEDED] font-['DM Sans'] rounded-[8px] p-[13px] text-[0.88rem] cursor-pointer font-semibold mt-[4px] center bg-[#FF6B2B]"
+                            >
+                                Cadastrar
+                            </button>
+                            <button
+                                class="w-full bg-transparent border border-[#222222] font-['DM Sans'] text-[0.85rem] text-[#EDEDED] p-[12px] cursor-pointer center rounded-[8px]"
+                            >
+                                <a href="/">Fazer login</a>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-[#5A5A5A] ml-9">
-                  Posts em alta e conquistas que mostram seu crescimento.
-                </div>
-              </div>
-
-              <div>
-                <div class="feature-icon flex items-center gap-1">
-                  <span
-                    class="border border-[#FF6B2B30] bg-[#FF6B2B18] rounded-[8px] w-[32px] h-[32px] flex items-center justify-center"
-                  >
-                    ⚡
-                  </span>
-                  <strong class="text-[#EDEDED]">Feed personalizado</strong>
-                </div>
-                <div class="text-[#5A5A5A] ml-9">
-                  Conteúdo filtrado pelas tecnologias que você usa e ama.
-                </div>
-              </div>
             </div>
-          </div>
-
-          <div class="bg-[#161616] py-[48px] px-[48px] flex flex-col h-screen">
-            <!--right form-->
-            <div
-              class="font-['Syne'] font-bold text-[#EDEDED] text-[1.4rem] mb-[6px]"
-            >
-              Criar conta
-            </div>
-            <div class="text-[0.7rem] text-[#5A5A5A] mb-1">
-              Preencha os dados abaixo para começar
-            </div>
-
-            <form class="flex flex-col gap-2">
-              <label
-                for="name"
-                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
-                >Nome</label
-              >
-              <input
-                type="text"
-                id="user_name"
-                name="user_name"
-                class="text-[#EDEDED] w-full bg-[#0C0C0C] border border-[#222222] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
-              />
-              <label
-                for="nick"
-                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
-                >Nome do usuário</label
-              >
-              <input
-                type="text"
-                name="nick"
-                id="nick"
-                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
-              />
-
-              <label
-                for="email"
-                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
-                >Email</label
-              >
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="exemplo@email.com"
-                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
-              />
-
-              <label
-                for="password"
-                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
-                >Senha</label
-              >
-              <input
-                type="password"
-                name="password"
-                id="password"
-                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
-              />
-              <label
-                for="confirm_password"
-                class="text-[#5A5A5A] uppercase text-[0.72rem] font-semibold"
-                >Confirmar senha</label
-              >
-              <input
-                type="password"
-                name="confirm_password"
-                id="confirm_password"
-                class="text-[#EDEDED] w-full border border-[#222222] bg-[#0C0C0C] rounded-[8px] outline-[#FF6B2B] focus:outline-1 py-3 px-4"
-              />
-            </form>
-            <div class="flex flex-col gap-3">
-              <button
-                type="submit"
-                class="btn-create w-full text-[#EDEDED] font-['DM Sans'] rounded-[8px] p-[13px] text-[0.88rem] cursor-pointer font-semibold mt-[4px] center bg-[#FF6B2B]"
-              >
-                Cadastrar
-              </button>
-              <button
-                class="w-full bg-transparent border border-[#222222] font-['DM Sans'] text-[0.85rem] text-[#EDEDED] p-[12px] cursor-pointer center rounded-[8px]"
-              >
-                <a href="/">Fazer login</a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script src="../assets/js/cadastro.js"></script>
-  </body>
+        </main>
+        <script src="../assets/js/cadastro.js"></script>
+    </body>
 </html>
