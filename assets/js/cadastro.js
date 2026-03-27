@@ -28,7 +28,7 @@ const CreateUser = async () => {
     );
     console.log(response);
     if (response.status == 201) {
-      window.location.assign("/login");
+      window.location.assign("/");
     } else {
       window.alert("erro");
     }
