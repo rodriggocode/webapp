@@ -27,9 +27,9 @@ const CreateUser = async () => {
       date,
     );
     console.log(response);
-    if(response.ok){
-      window.location.assign("/login")
-    }else{
+    if (response.status == 201) {
+      window.location.assign("/login");
+    } else {
       window.alert("erro");
     }
   } catch (erro) {
@@ -109,7 +109,7 @@ const validarPassword = () => {
 };
 
 createUser.addEventListener("click", (event) => {
-  
+
   event.preventDefault();
 
   const isEmailvalid = validateEmail();
