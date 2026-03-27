@@ -1,4 +1,4 @@
-const createUser = document.querySelector(".btn-create");
+const createUser = document.getElementById("btn-create");
 
 const form = document.querySelector(".forms");
 
@@ -27,6 +27,11 @@ const CreateUser = async () => {
       date,
     );
     console.log(response);
+    if(response.ok){
+      window.location.assign("/login")
+    }else{
+      window.alert("erro");
+    }
   } catch (erro) {
     console.log("Erro");
   }
@@ -104,6 +109,7 @@ const validarPassword = () => {
 };
 
 createUser.addEventListener("click", (event) => {
+  
   event.preventDefault();
 
   const isEmailvalid = validateEmail();
@@ -111,10 +117,11 @@ createUser.addEventListener("click", (event) => {
   const isNameValid = validateName();
   const isNickValid = validateNick();
 
-  // arrumar aqui, tenho que entender pq so ta caindo no else
+
   if (isEmailvalid && isPasswordValid && isNameValid && isNickValid) {
     CreateUser();
   } else {
     console.log("Formulario invalido");
   }
+
 });
