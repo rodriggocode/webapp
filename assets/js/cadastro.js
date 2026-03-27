@@ -47,7 +47,7 @@ const validateName = () => {
 const validateNick = () => {
   const validateNick = document.querySelector("#nick");
   const validate_Nick = document.querySelector(".valid_nick");
-  // const validLengNick = document.querySelector(".valid_leng");
+  const validLengNick = document.querySelector(".valid_leng");
   let isValid = true;
   if (validateNick.value == "") {
     validate_Nick.classList.remove("hidden");
