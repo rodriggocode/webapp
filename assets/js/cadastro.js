@@ -28,12 +28,29 @@ const CreateUser = async () => {
     );
     console.log(response);
     if (response.status == 201) {
-      window.location.assign("/");
+      Toastify({
+        text: "Cadastro realizado com sucesso!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "left",
+        stopOnFocus: true,
+        style: {
+          background: "#FF6B2B",
+        },
+      }).showToast();
+      setTimeout(() => window.location.assign("/"), 3000);
     } else {
       window.alert("erro");
     }
   } catch (erro) {
-    console.log("Erro");
+    Toastify({
+      text: "Algo deu errado, tente novamente!",
+      duration: 3000,
+      style: {
+        background: "#FF0000",
+      },
+    }).showToast();
   }
 };
 
