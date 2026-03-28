@@ -37,10 +37,13 @@ const CreateUser = async () => {
         stopOnFocus: true,
         style: {
           background: "#FF6B2B",
-          borderRadius: "5px #5A5A5A",
+          borderRadius: "5px",
+          border: "1px solid #5A5A5A",
           fontFamily: "DM Sans, sans-serif",
           fontFamily: "0.7rem",
           position: "right",
+          color: "#5A5A5A",
+          fontWeight: "bold",
         },
       }).showToast();
       setTimeout(() => window.location.assign("/"), 3000);
