@@ -41,7 +41,7 @@ const CreateUser = async () => {
           border: "1px solid #5A5A5A",
           fontFamily: "DM Sans, sans-serif",
           fontSize: "0.7rem",
-          color: "#5A5A5A",
+          color: "#EDEDED",
           fontWeight: "bold",
         },
       }).showToast();
@@ -58,7 +58,7 @@ const CreateUser = async () => {
           border: "1px solid #5A5A5A",
           fontFamily: "DM Sans, sans-serif",
           fontSize: "0.7rem",
-          color: "#5A5A5A",
+          color: "#EDEDED",
           fontWeight: "bold",
         },
       }).showToast();
