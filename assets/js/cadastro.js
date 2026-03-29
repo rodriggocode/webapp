@@ -26,7 +26,7 @@ const CreateUser = async () => {
       "https://devbook-zqaw.onrender.com/create/user",
       date,
     );
-    console.log(response);
+    console.log(response); // depois tirar
     if (response.status == 201) {
       Toastify({
         text: "Cadastro realizado com sucesso!",
@@ -46,15 +46,52 @@ const CreateUser = async () => {
         },
       }).showToast();
       setTimeout(() => window.location.assign("/"), 3000);
+    } else if (response.status == 409) {
+      Toastify({
+        text: "Email ou Nick ja cadastrados, tente novamente!",
+        duration: 3000,
+        position: "right",
+        gravity: "top",
+        style: {
+          background: "#FF0000",
+          borderRadius: "5px",
+          border: "1px solid #5A5A5A",
+          fontFamily: "DM Sans, sans-serif",
+          fontSize: "0.7rem",
+          color: "#5A5A5A",
+          fontWeight: "bold",
+        },
+      }).showToast();
     } else {
-      window.alert("erro");
+      Toastify({
+        text: "Algo deu errado, tente novamente!",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "#FF0000",
+          borderRadius: "5px",
+          border: "1px solid #5A5A5A",
+          fontFamily: "DM Sans, sans-serif",
+          fontSize: "0.7rem",
+          color: "#5A5A5A",
+          fontWeight: "bold",
+        },
+      }).showToast();
     }
   } catch (erro) {
     Toastify({
       text: "Algo deu errado, tente novamente!",
       duration: 3000,
+      position: "right",
       style: {
         background: "#FF0000",
+        borderRadius: "5px",
+        border: "1px solid #5A5A5A",
+        fontFamily: "DM Sans, sans-serif",
+        fontSize: "0.7rem",
+        color: "#5A5A5A",
+        fontWeight: "bold",
       },
     }).showToast();
   }
