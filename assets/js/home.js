@@ -11,7 +11,7 @@ const Like = () => {
   cont.innerHTML = parseInt(cont.innerHTML) + 1;
 
   let icon = document.getElementById("like-icon");
-  icon.style.fill = "red";
+ icon.style.fill = "red";
 }
 
 
@@ -21,3 +21,10 @@ like.addEventListener("click", () => {
 });
 
 
+let showForm = document.getElementById("posts");
+showForm.addEventListener("click", () => {
+  console.log("chegou aqui");
+  let showPost = document.querySelector("#new-post-form");
+  showPost.classList.remove("hidden");
+
+});

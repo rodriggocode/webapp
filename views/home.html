@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 
 <head>
@@ -10,9 +10,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap"
     rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet" />
 </head>
 
 <body class="bg-[#0d0d0f] min-h-screen">
@@ -43,10 +43,9 @@
             <polyline points="16 17 21 12 16 7"></polyline>
             <line x1="21" y1="12" x2="9" y2="12"></line>
           </svg>
-          <span class="logout">Sair</span>
+          <a href="/" class="logout">Sair</a>
         </button>
       </div>
-
     </div>
   </header>
 
@@ -55,29 +54,49 @@
       <div class="font-['Syne'] text-[15px] font-semibold text-[#9896a8]">
         Feed
       </div>
-      <button
-        class="bg-[#ff6b2b] text-white  text-[13px] cursor-pointer font-medium rounded-[10px] py-[7px] px-[15px] transition-opacity duration-150">+
-        Nova publicaco</button>
+      <button id="posts"
+        class="bg-[#ff6b2b] text-white text-[13px] hover:bg-[#e55a1c] transition-colors duration-150 cursor-pointer font-medium rounded-[10px] py-[7px] px-[15px] transition-opacity duration-150">
+        + Nova publicaco
+      </button>
     </div>
-
+    <!--TESTANDO UM FORMULARIO AQUI ELE VAI FICAR HIDDEN, QUANDO CLILCAR NO BOTAO DE NOVA PUBLICACAO ELE IRA APARECER-->
+    <div class="font-['DM Sans'] text-[13px] text-[#5A5A5A] mb-2 hidden" id="new-post-form">
+      <form action="#" method="#" class="flex flex-col gap-4 mb-4">
+        <input type="text" name="title" id="title" placeholder="Título do post"
+          class="w-full px-3 py-2 rounded-md bg-[#1a1a1a] border border-[#333] text-white focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]" />
+        <textarea name="content" id="content" placeholder="Conteúdo do post"
+          class="w-full px-3 py-2 rounded-md bg-[#1a1a1a] border border-[#333] text-white focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]"
+          rows="4"></textarea>
+        <button type="submit"
+          class="self-end bg-[#ff6b2b] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-[#e55a1c] transition-colors duration-150"
+          id="posts">
+          Publicar
+        </button>
+      </form>
+    </div>
     <article
-      class="font-['DM Sans'] bg-[#FF6B2B18] border border-[#FF6B2B30] rounded-[14px] pt-[1.1rem] px-5 pb-[0.9rem] text-[#f0eff5] transition-[border-color] duration-150 transition-[transform] duration-[120ms] ">
+      class="font-['DM Sans'] bg-[#FF6B2B18] border border-[#FF6B2B30] rounded-[14px] pt-[1.1rem] px-5 pb-[0.9rem] text-[#f0eff5] transition-[border-color] duration-150 transition-[transform] duration-[120ms]">
       <div class="text-[#ededed]">
         {{range .}}
-        <div class="text-[13px] text-[#9896a8] font-medium">Usuario de drogas</div>
-        <div class="text-[15px] font-medium text-[#f0eff5] mb-[6px] leading-[1.45]">{{.Title}}</div>
-        <div class="text-[13.5px] text-[#f0eff5] leading-[1.65] mb-[12px]">{{.Content}}</div>
+        <div class="text-[13px] text-[#9896a8] font-medium">
+          Usuario de drogas
+        </div>
+        <div class="text-[15px] font-medium text-[#f0eff5] mb-[6px] leading-[1.45]">
+          {{.Title}}
+        </div>
+        <div class="text-[13.5px] text-[#f0eff5] leading-[1.65] mb-[12px]">
+          {{.Content}}
+        </div>
         {{end}}
       </div>
 
       <div class="flex items-center gap-[4px] border-t-1 border-[#2A2A2A] pt-[10px]">
-        <button class=" like flex items-center gap-[5px] py-[5px] px-[9px] rounded-[6px] text-[12px]">
+        <button class="like flex items-center gap-[5px] py-[5px] px-[9px] rounded-[6px] text-[12px]">
           <svg viewBox="0 0 24 24" fill="var(--red)" stroke="var(--red)" stroke-width="2"
             class="w-[14px] h-[13px] shrink-0">
             <path
               d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-              id="like-icon">
-            </path>
+              id="like-icon"></path>
           </svg>
           <span id="count">0</span>
         </button>
