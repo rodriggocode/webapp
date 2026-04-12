@@ -20,15 +20,14 @@ const CreatePostForm = async () => {
    }),
   };
   const response = await fetch(
-   "https://devbook-zqaw.onrender.com/publicacao/criar", date,
-  );
-
-  console.log(response)
+   "https://devbook-zqaw.onrender.com/publicacao/criar", date);
+  console.log(response);
  }catch(erro){
   console.log("Deu ruim alguma coisa aqui");
  }
 }
 
-post.addEventListener("click", () =>{
+post.addEventListener("click", (event) =>{
+ event.preventDefault()
  CreatePostForm();
-})
+});

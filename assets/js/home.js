@@ -23,7 +23,6 @@ like.addEventListener("click", () => {
 
 let showForm = document.getElementById("posts");
 showForm.addEventListener("click", () => {
-  console.log("chegou aqui");
   let showPost = document.querySelector("#new-post-form");
   showPost.classList.remove("hidden");
 
