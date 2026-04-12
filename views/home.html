@@ -30,11 +30,19 @@
             d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
         </svg>
 
-        <input type="text" placeholder="Buscar publicações"
-          class="w-full h-[35px] pr-[14px] pl-[34px] rounded-full bg-[rgba(255,255,255,0.07)] border-[0.5px] border-[rgba(255,255,255,0.07)] outline-none text-sm text-white placeholder-gray-500 transition-[border-color,background] duration-150" />
+        <form action="/search-user" method="GET">
+          <input type="text" placeholder="Buscar usuario" id="users" name="users"
+            class="w-full h-[35px] pr-[14px] pl-[34px] rounded-full bg-[rgba(255,255,255,0.07)] border-[0.5px] border-[rgba(255,255,255,0.07)] outline-none text-sm text-white placeholder-gray-500 transition-[border-color,background] duration-150" />
+        </form>
       </div>
 
       <div class="flex items-center gap-[10px] ml-auto shrink-0">
+        <div class="text-[#5c5a6b] text-sm font-medium">
+          <ul class="flex gap-2">
+            <li><a href="/home">Pagina Principal</a></li>
+            <li><a href="/perfil">Meu Perfil</a></li>
+          </ul>
+        </div>
         <button
           class="flex items-center gap-[6px] text-[#5c5a6b] font-['DM Sans'] font-medium border-[0.5px] border-[#5a5a5a] py-1.5 px-[11px] rounded-[10px] cursor-pointer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -59,33 +67,37 @@
         + Nova publicaco
       </button>
     </div>
-    <!--TESTANDO UM FORMULARIO AQUI ELE VAI FICAR HIDDEN, QUANDO CLILCAR NO BOTAO DE NOVA PUBLICACAO ELE IRA APARECER-->
+
+
     <div class="font-['DM Sans'] text-[13px] text-[#5A5A5A] mb-2 hidden" id="new-post-form">
-      <form action="#" method="#" class="flex flex-col gap-4 mb-4">
+      <form action="#" method="POST" id="send-form" class="flex flex-col gap-4 mb-4">
         <input type="text" name="title" id="title" placeholder="Título do post"
           class="w-full px-3 py-2 rounded-md bg-[#1a1a1a] border border-[#333] text-white focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]" />
         <textarea name="content" id="content" placeholder="Conteúdo do post"
           class="w-full px-3 py-2 rounded-md bg-[#1a1a1a] border border-[#333] text-white focus:outline-none focus:ring-2 focus:ring-[#ff6b2b]"
           rows="4"></textarea>
-        <button type="submit"
-          class="self-end bg-[#ff6b2b] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-[#e55a1c] transition-colors duration-150"
-          id="posts">
+        <button id="btn-post" type="submit"
+          class="self-end bg-[#ff6b2b] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-[#e55a1c] transition-colors duration-150">
           Publicar
         </button>
       </form>
     </div>
+
+
     <article
       class="font-['DM Sans'] bg-[#FF6B2B18] border border-[#FF6B2B30] rounded-[14px] pt-[1.1rem] px-5 pb-[0.9rem] text-[#f0eff5] transition-[border-color] duration-150 transition-[transform] duration-[120ms]">
       <div class="text-[#ededed]">
         {{range .}}
         <div class="text-[13px] text-[#9896a8] font-medium">
-          Usuario de drogas
+          <a href="" class="text-[16px]">{{.AuthorNick}}</a>
         </div>
         <div class="text-[15px] font-medium text-[#f0eff5] mb-[6px] leading-[1.45]">
           {{.Title}}
         </div>
         <div class="text-[13.5px] text-[#f0eff5] leading-[1.65] mb-[12px]">
           {{.Content}}
+          <!--teste-->
+          <div>10/04/2026</div>
         </div>
         {{end}}
       </div>
@@ -100,6 +112,7 @@
           </svg>
           <span id="count">0</span>
         </button>
+
         <button class="action-btn flex items-center gap-[5px] py-[5px] px-[9px] rounded-[6px] text-[12px]">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             class="w-[14px] h-[13px] shrink-0">
@@ -110,7 +123,13 @@
       </div>
     </article>
   </main>
+  <footer class="mt-[266px]">
+    <div class="text-[#2A2A2A] text-sm font-['DM Sans'] text-center">
+      Devbook: Todos os direitos sao destinado ao desenvolvedor
+    </div>
+  </footer>
   <script src="/assets/js/home.js"></script>
+  <script src="/assets/js/posts.js"></script>
 </body>
 
 </html>
