@@ -22,7 +22,7 @@ const CreatePostForm = async () => {
     const response = await fetch(
       "https://devbook-zqaw.onrender.com/publicacao/criar", date);
     console.log(response);
-    window.location = "/home"
+    window.location.ref = "/home"
   } catch (erro) {
     console.log("Deu ruim alguma coisa aqui");
   }
