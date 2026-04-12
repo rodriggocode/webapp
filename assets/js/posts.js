@@ -14,6 +14,7 @@ const CreatePostForm = async () => {
   const date = {
    method: "POST",
    headers: headers,
+   credentials: "include",
    body: JSON.stringify({
      title: title,
      content: content,
