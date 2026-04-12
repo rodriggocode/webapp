@@ -32,4 +32,5 @@ const CreatePostForm = async () => {
 post.addEventListener("click", (event) =>{
  event.preventDefault()
  CreatePostForm();
+ console.log(localStorage.getItem("token"));
 });
