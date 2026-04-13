@@ -21,8 +21,11 @@ const CreatePostForm = async () => {
     };
     const response = await fetch(
       "/create/post", date);
-    console.log(response);
-    window.location.href = "/home"
+    if (response.ok) {
+      window.location.href = "/home"
+    } else {
+      console.log(`erro: ${response.status}`)
+    }
   } catch (erro) {
     console.log("Deu ruim alguma coisa aqui");
   }
