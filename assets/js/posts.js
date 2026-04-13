@@ -20,9 +20,9 @@ const CreatePostForm = async () => {
       }),
     };
     const response = await fetch(
-      "https://devbook-zqaw.onrender.com/publicacao/criar", date);
+      "/create/post", date);
     console.log(response);
-    window.location.ref = "/home"
+    window.location.href = "/home"
   } catch (erro) {
     console.log("Deu ruim alguma coisa aqui");
   }
