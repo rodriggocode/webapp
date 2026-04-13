@@ -9,10 +9,19 @@ import (
 )
 
 func CreatePost(w http.ResponseWriter, req *http.Request) {
-	req.ParseForm()
+	var body struct {
+		Title   string `json:"title"`
+		Content string `json:"content"`
+	}
+
+	if err := json.NewDecoder(req.Body).Decode(&body); err != nil {
+		respostas.JSON(w, http.StatusBadRequest, respostas.Err{Erro: err.Error()})
+		return
+	}
+
 	post, err := json.Marshal(map[string]string{
-		"title":   req.FormValue("title"),
-		"content": req.FormValue("content"),
+		"title":   body.Title,
+		"content": body.Content,
 	})
 
 	if err != nil {
