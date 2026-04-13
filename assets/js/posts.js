@@ -3,34 +3,32 @@ const post = document.getElementById("btn-post");
 const postForm = document.querySelector("#send-form");
 
 const CreatePostForm = async () => {
- const title = postForm.elements["title"].value;
- const content = postForm.elements["content"].value;
+  const title = postForm.elements["title"].value;
+  const content = postForm.elements["content"].value;
 
- try{
-  const headers = {
-   "Content-Type": "application/json",
-   "Authorization": "Bearer " + localStorage.getItem("token"),
-  };
+  try {
+    const headers = {
+      "Content-Type": "application/json",
+    };
 
-  const date = {
-   method: "POST",
-   headers: headers,
-   credentials: "include",
-   body: JSON.stringify({
-     title: title,
-     content: content,
-   }),
-  };
-  const response = await fetch(
-   "https://devbook-zqaw.onrender.com/publicacao/criar", date);
-  console.log(response);
- }catch(erro){
-  console.log("Deu ruim alguma coisa aqui");
- }
+    const date = {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify({
+        title: title,
+        content: content,
+      }),
+    };
+    const response = await fetch(
+      "/create/post", date);
+    console.log(response);
+    window.location.href = "/home"
+  } catch (erro) {
+    console.log("Deu ruim alguma coisa aqui");
+  }
 }
 
-post.addEventListener("click", (event) =>{
- event.preventDefault()
- CreatePostForm();
- console.log(localStorage.getItem("token"));
+post.addEventListener("click", (event) => {
+  event.preventDefault()
+  CreatePostForm();
 });

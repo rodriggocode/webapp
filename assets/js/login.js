@@ -22,8 +22,6 @@ const LoginForm = async () => {
         const response = await fetch(apiUrl, date);
         if (response.ok) {
             console.log("Login bem-sucedido!");
-            const data = await response.json();
-            localStorage.setItem("token", data.access_token)
             window.location.assign("/home");
         } else {
             const errorData = await response.json();
