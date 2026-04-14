@@ -22,6 +22,10 @@ const CreatePostForm = async () => {
     const response = await fetch(
       "/create/post", date);
     if (response.ok) {
+      Toastify({
+        text: "Publicacao criada",
+        duration: 3000,
+      }).showToast();
       window.location.href = "/home"
     } else {
       console.log(`erro: ${response.status}`)

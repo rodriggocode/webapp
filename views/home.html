@@ -83,11 +83,11 @@
       </form>
     </div>
 
+    {{range .}}
 
     <article
       class="font-['DM Sans'] bg-[#FF6B2B18] border border-[#FF6B2B30] rounded-[14px] pt-[1.1rem] px-5 pb-[0.9rem] text-[#f0eff5] transition-[border-color] duration-150 transition-[transform] duration-[120ms]">
       <div class="text-[#ededed]">
-        {{range .}}
         <div class="text-[13px] text-[#9896a8] font-medium">
           <a href="" class="text-[16px]">{{.AuthorNick}}</a>
         </div>
@@ -99,7 +99,6 @@
           <!--teste-->
           <div>10/04/2026</div>
         </div>
-        {{end}}
       </div>
 
       <div class="flex items-center gap-[4px] border-t-1 border-[#2A2A2A] pt-[10px]">
@@ -122,6 +121,7 @@
         </button>
       </div>
     </article>
+    {{end}}
   </main>
   <footer class="mt-[266px]">
     <div class="text-[#2A2A2A] text-sm font-['DM Sans'] text-center">
