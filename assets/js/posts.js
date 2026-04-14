@@ -25,6 +25,14 @@ const CreatePostForm = async () => {
       Toastify({
         text: "Publicacao criada",
         duration: 3000,
+        style: {
+          background: "#FF6B2B",
+          borderRadius: "5px",
+          border: "1px solid #5A5A5A",
+          fontFamily: "DM Sans, sans-serif",
+          fontSize: "0.7rem",
+          fontWeight: "bold",
+        }
       }).showToast();
       window.location.href = "/home"
     } else {
