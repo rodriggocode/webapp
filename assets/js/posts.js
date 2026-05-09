@@ -31,6 +31,7 @@ const CreatePostForm = async () => {
           border: "1px solid #5A5A5A",
           fontFamily: "DM Sans, sans-serif",
           fontSize: "0.7rem",
+          color: "EDEDED",
           fontWeight: "bold",
         }
       }).showToast();

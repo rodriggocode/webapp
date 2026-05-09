@@ -8,4 +8,5 @@ import (
 
 func RouterPost(router *http.ServeMux) {
 	router.HandleFunc("/create/post", middlewares.Auth(handler.CreatePost))
+	router.HandleFunc("/publicacoes/{publicacaoId}/curtir", middlewares.Auth(handler.LikePost))
 }

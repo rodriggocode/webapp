@@ -3,7 +3,7 @@ package models
 import "time"
 
 type Posts struct {
-	ID         uint64    `json:"id,omitempty"`
+	ID         uint64    `json:"id_posts,omitempty"`
 	Title      string    `json:"title,omitempty"`
 	Content    string    `json:"content,omitempty"`
 	AuthorID   uint64    `json:"author_id,omitempty"`
@@ -11,4 +11,3 @@ type Posts struct {
 	Like       uint64    `json:"like"`
 	CreatedAt  time.Time `json:"createdAt,omitempty"`
 }
-

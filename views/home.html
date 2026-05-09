@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
 </head>
 
 <body class="bg-[#0d0d0f] min-h-screen">
@@ -32,7 +33,7 @@
         </svg>
 
         <form action="/search-user" method="GET">
-          <input type="text" placeholder="Buscar usuario" id="users" name="users"
+          <input type="search" placeholder="Buscar usuario" id="users" name="users"
             class="w-full h-[35px] pr-[14px] pl-[34px] rounded-full bg-[rgba(255,255,255,0.07)] border-[0.5px] border-[rgba(255,255,255,0.07)] outline-none text-sm text-white placeholder-gray-500 transition-[border-color,background] duration-150" />
         </form>
       </div>
@@ -83,8 +84,7 @@
         </button>
       </form>
     </div>
-
-    {{range .}}
+    {{range .Posts}}
 
     <article
       class="font-['DM Sans'] bg-[#FF6B2B18] border border-[#FF6B2B30] rounded-[14px] pt-[1.1rem] px-5 pb-[0.9rem] text-[#f0eff5] transition-[border-color] duration-150 transition-[transform] duration-[120ms]">
@@ -98,29 +98,49 @@
         <div class="text-[13.5px] text-[#f0eff5] leading-[1.65] mb-[12px]">
           {{.Content}}
           <!--teste-->
-          <div>10/04/2026</div>
+          <div>{{ .CreatedAt.Format "02/01/2006" }}</div>
         </div>
       </div>
 
+      {{ if(eq .AuthorID $.UserID) }}
       <div class="flex items-center gap-[4px] border-t-1 border-[#2A2A2A] pt-[10px]">
-        <button class="like flex items-center gap-[5px] py-[5px] px-[9px] rounded-[6px] text-[12px]">
+        <button class="like flex cursor-pointer items-center gap-[5px] py-[5px] px-[9px] rounded-[6px] text-[12px]"
+          data-post-id="{{ .ID }}">
           <svg viewBox="0 0 24 24" fill="var(--red)" stroke="var(--red)" stroke-width="2"
             class="w-[14px] h-[13px] shrink-0">
             <path
               d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-              id="like-icon"></path>
+              class="like-icon"></path>
           </svg>
-          <span id="count">0</span>
+          <span class="count">{{.Like}} curtidas</span>
         </button>
-
-        <button class="action-btn flex items-center gap-[5px] py-[5px] px-[9px] rounded-[6px] text-[12px]">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        <div class="cursor-pointer text-[12px]">
+          <a href="/perfil" class="flex gap-[4px]">
+            <span class="icon icon-square-pen"></span>
+            editar
+          </a>
+        </div>
+        <div class="cursor-pointer text-[12px]">
+          <a href="/excluir" class="flex gap-[4px]">
+            <span class="icon icon-trash"></span>
+            excluir
+          </a>
+        </div>
+      </div>
+      {{ else }}
+      <div class="flex items-center gap-[4px] border-t-1 border-[#2A2A2A] pt-[10px]">
+        <button class="like flex items-center gap-[5px] py-[5px] px-[9px] rounded-[6px] text-[12px]"
+          data-post-id="{{ .ID }}">
+          <svg viewBox="0 0 24 24" fill="var(--red)" stroke="var(--red)" stroke-width="2"
             class="w-[14px] h-[13px] shrink-0">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              calss="like-icon"></path>
           </svg>
-          47
+          <span class="count">{{.Like}} curtidas</span>
         </button>
       </div>
+      {{end}}
     </article>
     {{end}}
   </main>

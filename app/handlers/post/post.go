@@ -3,7 +3,9 @@ package post
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"net/http"
+	"strconv"
 	"webapp/app/request"
 	respostas "webapp/app/response"
 )
@@ -45,4 +47,29 @@ func CreatePost(w http.ResponseWriter, req *http.Request) {
 	}
 
 	respostas.JSON(w, response.StatusCode, nil)
+}
+
+func LikePost(w http.ResponseWriter, req *http.Request) {
+	params := req.PathValue("publicacaoId")
+	postID, err := strconv.Atoi(params)
+	if err != nil {
+		respostas.JSON(w, http.StatusBadRequest, respostas.Err{Erro: err.Error()})
+		return
+	}
+	url := fmt.Sprintf("https://devbook-zqaw.onrender.com/publicacoes/%d/curtir", postID)
+	response, err := request.RequestAuth(req, http.MethodPost, url, nil)
+	if err != nil {
+		respostas.JSON(w, http.StatusInternalServerError, respostas.Err{Erro: err.Error()})
+		return
+	}
+
+	defer response.Body.Close()
+
+	if response.StatusCode >= 400 {
+		respostas.StatusCodeErr(w, response)
+		return
+	}
+
+	respostas.JSON(w, response.StatusCode, nil)
+
 }

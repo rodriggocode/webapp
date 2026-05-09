@@ -21,7 +21,7 @@ const LoginForm = async () => {
         const apiUrl = "/login";
         const response = await fetch(apiUrl, date);
         if (response.ok) {
-            console.log("Login bem-sucedido!");
+            console.log("Login bem-sucedido!"); // aqui vem um fitfy com um nole entrando(la ele) e desabilitar o botao para o usuario de drogas nao ficar fazerndo varias requisicoes
             window.location.assign("/home");
         } else {
             const errorData = await response.json();
