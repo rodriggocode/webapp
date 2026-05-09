@@ -5,10 +5,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"webapp/app/cookies"
 	"webapp/app/models"
 	"webapp/app/request"
 	"webapp/app/response"
 	utils "webapp/app/utils"
+
+	"github.com/golang-jwt/jwt/v5"
 )
 
 func LoadPageCreateUser(w http.ResponseWriter, req *http.Request) {
@@ -36,6 +39,16 @@ func LoadHomePage(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	fmt.Println(posts)
-	utils.ExecuterTemplate(w, "home.html", posts)
+	cookie, _ := cookies.ReadToken(req)
+
+	token, _, err := new(jwt.Parser).ParseUnverified(cookie, jwt.MapClaims{})
+	claims := token.Claims.(jwt.MapClaims)
+	userId := uint64(claims["id_user"].(float64))
+	utils.ExecuterTemplate(w, "home.html", struct {
+		Posts  []models.Posts
+		UserID uint64
+	}{
+		Posts:  posts,
+		UserID: userId,
+	})
 }
